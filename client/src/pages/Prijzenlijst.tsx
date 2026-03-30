@@ -44,6 +44,14 @@ const priceCategories = [
     ],
   },
   {
+    category: "Hydrodermabrasie",
+    items: [
+      { name: "Silver", duration: "", price: "€120" },
+      { name: "Gold", duration: "", price: "€133" },
+      { name: "Platinum", duration: "", price: "€145" },
+    ],
+  },
+  {
     category: "Geavanceerde Technologie",
     items: [
       { name: "Observ 520x Huidscan", duration: "30 min", price: "€35" },
