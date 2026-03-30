@@ -52,6 +52,22 @@ const priceCategories = [
     ],
   },
   {
+    category: "Skin active",
+    items: [
+      { name: "60 min", duration: "", price: "€99,95" },
+      { name: "75 min", duration: "", price: "€125" },
+      { name: "90 min met masker", duration: "", price: "€145" },
+      { name: "90 min met masker + serums", duration: "", price: "€165" },
+    ],
+  },
+  {
+    category: "Coldplasma",
+    items: [
+      { name: "Kaaklijn", duration: "", price: "€125" },
+      { name: "Full Face", duration: "", price: "€150" },
+    ],
+  },
+  {
     category: "Geavanceerde Technologie",
     items: [
       { name: "Observ 520x Huidscan", duration: "30 min", price: "€35" },
