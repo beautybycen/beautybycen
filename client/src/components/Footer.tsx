@@ -19,7 +19,7 @@ export default function Footer() {
               className="h-16 w-auto object-contain mb-4 brightness-0 invert opacity-90"
             />
             <p className="font-body text-sm leading-relaxed text-[oklch(0.75_0.025_75)] max-w-xs mt-4">
-              Professionele huidspecialist in Zaandam. Gespecialiseerd in innovatieve gezichtsbehandelingen en donkere huid.
+              Professionele huidspecialist in Zaandam. Gespecialiseerd in innovatieve gezichtsbehandelingen voor alle huidtypes, met extra expertise in donkere huid.
             </p>
             <p className="font-display italic text-lg text-[oklch(0.78_0.06_15)] mt-4">
               "Diep in de huid, helder in uw schoonheid"
