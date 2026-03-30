@@ -65,6 +65,9 @@ export default function Contact() {
                         Vlielandstraat 2, unit 243<br />
                         1506ZK Zaandam
                       </p>
+                      <p className="font-body text-sm text-[oklch(0.62_0.09_50)] mt-1 font-500">
+                        ✓ Gratis parkeren
+                      </p>
                     </div>
                   </div>
 
