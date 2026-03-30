@@ -27,7 +27,7 @@ const treatments = [
   {
     category: "Normal/Basis behandelingen",
     items: [
-      { name: "Klassieke Gezichtsbehandeling", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
+      { name: "Normal/Basis behandelingen", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
       { name: "Diepe Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
       { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
       { name: "Hydraterende Behandeling", desc: "Intensieve vochtinbreng voor een droge of gedehydrateerde huid.", duration: "60 min" },

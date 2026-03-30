@@ -27,7 +27,7 @@ const priceCategories = [
   {
     category: "Gezichtsbehandelingen",
     items: [
-      { name: "Klassieke Gezichtsbehandeling", duration: "60 min", price: "€65" },
+      { name: "Normal/Basis behandelingen", duration: "60 min", price: "€65" },
       { name: "Diepe Reiniging", duration: "75 min", price: "€80" },
       { name: "Anti-Aging Behandeling", duration: "90 min", price: "€95" },
       { name: "Hydraterende Behandeling", duration: "60 min", price: "€65" },
