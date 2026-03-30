@@ -222,18 +222,7 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Floating card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 max-w-[200px]">
-                  <div className="flex items-center gap-1 mb-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} className="fill-[oklch(0.62_0.09_50)] text-[oklch(0.62_0.09_50)]" />
-                    ))}
-                  </div>
-                  <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-snug">
-                    "Mijn huid is nog nooit zo mooi geweest!"
-                  </p>
-                  <p className="font-body text-xs font-600 text-[oklch(0.22_0.04_50)] mt-1">— Tevreden klant</p>
-                </div>
+
                 {/* Decorative circle */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-[oklch(0.78_0.06_15)]/20 -z-10" />
               </div>
