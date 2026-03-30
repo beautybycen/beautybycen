@@ -10,6 +10,7 @@ import Huidproblemen from "./pages/Huidproblemen";
 import OverMij from "./pages/OverMij";
 import Prijzenlijst from "./pages/Prijzenlijst";
 import Contact from "./pages/Contact";
+import Technologie from "./pages/Technologie";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/over-mij"} component={OverMij} />
       <Route path={"/prijzenlijst"} component={Prijzenlijst} />
       <Route path={"/contact"} component={Contact} />
+      <Route path={"/technologie"} component={Technologie} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

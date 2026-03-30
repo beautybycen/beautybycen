@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/huidproblemen", label: "Huidproblemen" },
   { href: "/behandelingen", label: "Behandelingen" },
+  { href: "/technologie", label: "Technologie" },
   { href: "/over-mij", label: "Over mij" },
   { href: "/prijzenlijst", label: "Prijzenlijst" },
   { href: "/contact", label: "Contact" },
