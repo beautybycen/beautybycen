@@ -106,8 +106,9 @@ export default function Contact() {
                       <h3 className="font-body font-600 text-sm text-[oklch(0.22_0.04_50)] mb-2">Openingstijden</h3>
                       <div className="space-y-1.5">
                         {[
-                          { day: "Maandag – Vrijdag", hours: "09:00 – 18:00" },
-                          { day: "Zaterdag", hours: "10:00 – 16:00" },
+                          { day: "Maandag", hours: "Gesloten" },
+                          { day: "Dinsdag – Vrijdag", hours: "10:00 – 19:00" },
+                          { day: "Zaterdag", hours: "10:00 – 14:00" },
                           { day: "Zondag", hours: "Gesloten" },
                         ].map((schedule, i) => (
                           <div key={i} className="flex items-center justify-between max-w-xs">
