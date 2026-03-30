@@ -27,11 +27,13 @@ const priceCategories = [
   {
     category: "Gezichtsbehandelingen",
     items: [
-      { name: "Normal/Basis behandelingen", duration: "60 min", price: "€65" },
-      { name: "Diepe Reiniging", duration: "75 min", price: "€80" },
-      { name: "Anti-Aging Behandeling", duration: "90 min", price: "€95" },
-      { name: "Hydraterende Behandeling", duration: "60 min", price: "€65" },
-      { name: "Brightening Behandeling", duration: "75 min", price: "€85" },
+      { name: "Normal/Basis", duration: "", price: "€50" },
+      { name: "* Met mask", duration: "", price: "+ €10" },
+      { name: "* Yelly mask", duration: "", price: "+ €12,50" },
+      { name: "* Peeloff mask", duration: "", price: "+ €15" },
+      { name: "* Met 1 serum naar behoeften v/d huid", duration: "", price: "+ €30" },
+      { name: "Een peeling met glow", duration: "", price: "+ €30" },
+      { name: "* Met ledigen", duration: "", price: "+ €35" },
     ],
   },
   {
