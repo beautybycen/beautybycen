@@ -58,12 +58,9 @@ export default function OverMij() {
                   <img
                     src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy_portrait_5f3ed40b.jpg"
                     alt="Cindy Nimmermeer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_60%]"
                   />
                 </div>
-                {/* Decorative elements */}
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-[oklch(0.78_0.06_15)]/20 -z-10" />
-                <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full bg-[oklch(0.62_0.09_50)]/15 -z-10" />
               </div>
             </FadeUp>
 
