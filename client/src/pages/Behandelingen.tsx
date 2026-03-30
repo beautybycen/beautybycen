@@ -46,7 +46,7 @@ const treatments = [
     items: [
       { name: "Observ 520x Huidscan", desc: "Geavanceerde analyse van uw huid met de nieuwste scantechnologie.", duration: "30 min" },
       { name: "Skin activ/Microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageen productie.", duration: "90 min" },
-      { name: "LED Lichttherapie", desc: "Behandeling met verschillende lichtgolflengten voor diverse huidproblemen.", duration: "30 min" },
+      { name: "Coldplasma-behandeling", desc: "Behandeling stimuleert huidvernieuwing op cellulair niveau. Het vermindert bacteriën, ontstekingen en versnelt het herstelproces.", duration: "30 min" },
     ],
   },
   {

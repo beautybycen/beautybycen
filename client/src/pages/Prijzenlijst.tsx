@@ -49,8 +49,8 @@ const priceCategories = [
       { name: "Observ 520x Huidscan", duration: "30 min", price: "€35" },
       { name: "Huidscan + Consult", duration: "45 min", price: "€50" },
       { name: "Skin activ/Microneedling zonder naalden", duration: "90 min", price: "€120" },
-      { name: "LED Lichttherapie", duration: "30 min", price: "€40" },
-      { name: "LED + Gezichtsbehandeling", duration: "90 min", price: "€95" },
+      { name: "Coldplasma-behandeling", duration: "30 min", price: "€40" },
+      { name: "Coldplasma + Gezichtsbehandeling", duration: "90 min", price: "€95" },
     ],
   },
   {
