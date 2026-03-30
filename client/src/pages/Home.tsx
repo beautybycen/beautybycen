@@ -261,8 +261,8 @@ export default function Home() {
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
-              <FadeUp key={i} delay={i * 80}>
-                <Link href={service.href}>
+                <FadeUp key={i} delay={i * 80}>
+                  <Link href={service.href}>
                   <div className="group bg-white rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-[oklch(0.92_0.018_75)] cursor-pointer h-full">
                     <div className="w-11 h-11 rounded-xl bg-[oklch(0.92_0.022_75)] flex items-center justify-center mb-5 group-hover:bg-[oklch(0.62_0.09_50)] transition-colors duration-300">
                       <Icon size={20} className="text-[oklch(0.62_0.09_50)] group-hover:text-white transition-colors duration-300" />
@@ -277,8 +277,8 @@ export default function Home() {
                       Meer info <ChevronRight size={14} />
                     </div>
                   </div>
-                </Link>
-              </FadeUp>
+                  </Link>
+                </FadeUp>
               );
             })}
           </div>
