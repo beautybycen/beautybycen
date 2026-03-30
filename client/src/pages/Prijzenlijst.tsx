@@ -37,12 +37,10 @@ const priceCategories = [
     ],
   },
   {
-    category: "Huidproblemen",
+    category: "Acne behandeling",
     items: [
-      { name: "Acne Behandeling", duration: "75 min", price: "€80" },
-      { name: "Pigmentatie Behandeling", duration: "90 min", price: "€95" },
-      { name: "Rosacea Behandeling", duration: "60 min", price: "€70" },
-      { name: "Sensitieve Huid Behandeling", duration: "60 min", price: "€70" },
+      { name: "Acne behandeling", duration: "", price: "€150" },
+      { name: "* Studenten korting", duration: "", price: "€100" },
     ],
   },
   {
