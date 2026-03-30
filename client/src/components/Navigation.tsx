@@ -76,7 +76,7 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
             <a
-              href="https://beautybycen.nl"
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ZXpxwvB8QfAG-hZaafXgJb0HpAYOPSPyGHvbxHcpc2-UEFB95mXLmrso54Ow2W457FLTzBJxs"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 rounded-full text-sm font-600 font-body tracking-wide transition-all duration-300 bg-[oklch(0.62_0.09_50)] text-[oklch(0.99_0.008_75)] hover:bg-[oklch(0.55_0.09_50)] hover:shadow-md"
@@ -119,7 +119,7 @@ export default function Navigation() {
             ))}
             <div className="px-6 pt-3 pb-2">
               <a
-                href="https://beautybycen.nl"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ZXpxwvB8QfAG-hZaafXgJb0HpAYOPSPyGHvbxHcpc2-UEFB95mXLmrso54Ow2W457FLTzBJxs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center px-6 py-3 rounded-full text-sm font-600 font-body tracking-wide bg-[oklch(0.62_0.09_50)] text-[oklch(0.99_0.008_75)]"
