@@ -56,7 +56,7 @@ export default function OverMij() {
               <div className="relative">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy-portrait-cropped_ea26ed55.jpg"
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy-portrait-v2_c4e2c45f.jpg"
                     alt="Cindy Nimmermeer"
                     className="w-full h-full object-cover object-top"
                   />
