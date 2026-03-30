@@ -25,7 +25,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 
 const treatments = [
   {
-    category: "Gezichtsbehandelingen",
+    category: "Normal/Basis behandelingen",
     items: [
       { name: "Klassieke Gezichtsbehandeling", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
       { name: "Diepe Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
