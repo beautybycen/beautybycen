@@ -67,24 +67,7 @@ const priceCategories = [
       { name: "Full Face", duration: "", price: "€150" },
     ],
   },
-  {
-    category: "Geavanceerde Technologie",
-    items: [
-      { name: "Observ 520x Huidscan", duration: "30 min", price: "€35" },
-      { name: "Huidscan + Consult", duration: "45 min", price: "€50" },
-      { name: "Skin activ/Microneedling zonder naalden", duration: "90 min", price: "€120" },
-      { name: "Coldplasma-behandeling", duration: "30 min", price: "€40" },
-      { name: "Coldplasma + Gezichtsbehandeling", duration: "90 min", price: "€95" },
-    ],
-  },
-  {
-    category: "Donkere Huid Specialist",
-    items: [
-      { name: "Behandeling Donkere Huid", duration: "75 min", price: "€85" },
-      { name: "Hyperpigmentatie Behandeling", duration: "90 min", price: "€100" },
-      { name: "Donkere Huid Consult", duration: "30 min", price: "€35" },
-    ],
-  },
+
   {
     category: "Pakketten",
     items: [
