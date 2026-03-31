@@ -123,6 +123,76 @@ export default function Behandelingen() {
             ))}
           </div>
 
+          {/* Technologie sectie */}
+          <FadeUp delay={150} className="mt-20">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="font-display text-3xl font-400 text-[oklch(0.22_0.04_50)]">
+                  Technologie
+                </h2>
+                <div className="flex-1 hairline" />
+              </div>
+              <div className="space-y-6">
+                {[
+                  {
+                    number: "01",
+                    name: "Observ 520x — Huidscan",
+                    tagline: "Zie wat het blote oog niet ziet",
+                    desc: "De Observ 520x is een geavanceerde huidanalysescanner die met behulp van verschillende lichtsoorten een gedetailleerd beeld geeft van uw huid. De scanner brengt onzuiverheden, pigmentvlekken, poriën, vochtgehalte en huidveroudering in kaart — ook diep onder het huidoppervlak. Op basis van deze analyse stel ik een behandelplan op dat precies aansluit bij uw huidbehoeften.",
+                    benefits: ["Nauwkeurige huidanalyse", "Zichtbaar resultaat meten", "Persoonlijk behandelplan", "Geschikt voor alle huidtypes"],
+                  },
+                  {
+                    number: "02",
+                    name: "Skin Active — Microneedling zonder naalden",
+                    tagline: "Huidvernieuwing zonder pijn",
+                    desc: "De Skin Active behandeling is een innovatieve techniek die de voordelen van microneedling biedt, maar dan volledig zonder naalden. Via elektroporatie worden actieve werkzame stoffen diep in de huid gebracht, waardoor de huid van binnenuit wordt gevoed en vernieuwd. De behandeling stimuleert de aanmaak van collageen en elastine en geeft een zichtbaar stralend resultaat.",
+                    benefits: ["Geen naalden, geen pijn", "Diepe toediening van serums", "Stimuleert collageenproductie", "Verbetert huidtextuur en uitstraling"],
+                  },
+                  {
+                    number: "03",
+                    name: "Coldplasma",
+                    tagline: "Krachtige technologie voor een gezonde huid",
+                    desc: "Coldplasma is een geavanceerde behandeltechnologie die gebruik maakt van geïoniseerde lucht op lage temperatuur. Het plasma doodt bacteriën, vermindert ontstekingen en versnelt het natuurlijke herstelproces van de huid. Bijzonder effectief bij acne, roodheid en huidveroudering. Pijnloos en niet-invasief.",
+                    benefits: ["Vermindert bacteriën en ontstekingen", "Versnelt huidherstel", "Effectief bij acne en roodheid", "Pijnloos en niet-invasief"],
+                  },
+                  {
+                    number: "04",
+                    name: "Hydrodermabrasie",
+                    tagline: "Diepe reiniging met zichtbaar resultaat",
+                    desc: "Hydrodermabrasie combineert mechanische exfoliatie en hydratatie tegelijkertijd. Met behulp van water en zuigkracht worden dode huidcellen, talg en onzuiverheden grondig verwijderd, terwijl de huid tegelijkertijd wordt gevoed met voedende serums. Direct zichtbaar gladdere, schonere en stralende huid — zonder hersteltijd.",
+                    benefits: ["Diepe reiniging van poriën", "Gelijktijdige hydratatie", "Direct zichtbaar resultaat", "Geen hersteltijd nodig"],
+                  },
+                ].map((device, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-[oklch(0.92_0.018_75)]">
+                    <div className="flex items-start gap-5">
+                      <span className="font-display text-4xl font-300 leading-none shrink-0 mt-1 text-[oklch(0.62_0.09_50)] opacity-30">
+                        {device.number}
+                      </span>
+                      <div className="flex-1">
+                        <p className="font-body text-xs tracking-[0.18em] uppercase text-[oklch(0.62_0.09_50)] mb-1">
+                          {device.tagline}
+                        </p>
+                        <h3 className="font-display text-xl md:text-2xl font-400 text-[oklch(0.22_0.04_50)] mb-3">
+                          {device.name}
+                        </h3>
+                        <p className="font-body text-sm text-[oklch(0.45_0.04_50)] leading-relaxed mb-4">
+                          {device.desc}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {device.benefits.map((b, j) => (
+                            <span key={j} className="font-body text-xs px-3 py-1.5 rounded-full bg-[oklch(0.94_0.018_75)] text-[oklch(0.40_0.04_50)]">
+                              ✓ {b}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeUp>
+
           {/* CTA */}
           <FadeUp delay={200} className="mt-20 text-center">
             <div className="bg-[oklch(0.22_0.04_50)] rounded-3xl p-12">
