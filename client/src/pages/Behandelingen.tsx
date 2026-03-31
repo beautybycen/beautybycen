@@ -31,8 +31,8 @@ const treatments = [
       { name: "Diepe Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
       { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
       { name: "Hydraterende Behandeling", desc: "Intensieve vochtinbreng voor een droge of gedehydrateerde huid.", duration: "60 min" },
-      { name: "Jelly Mask", desc: "Op behoeften van wat de huid nodig heeft. Een verzorgende jelly mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "op maat" },
-      { name: "Peel-off Mask", desc: "Op behoeften van wat de huid nodig heeft. Een reinigende peel-off mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "op maat" },
+      { name: "Jelly Mask", desc: "Op behoeften van wat de huid nodig heeft. Een verzorgende jelly mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
+      { name: "Peel-off Mask", desc: "Op behoeften van wat de huid nodig heeft. Een reinigende peel-off mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
     ],
   },
   {
