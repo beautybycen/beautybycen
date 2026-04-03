@@ -38,7 +38,7 @@ const treatments = [
   {
     category: "Huidproblemen",
     items: [
-      { name: "Acne Behandeling", desc: "Gerichte behandeling voor acne-gevoelige huid met ontstekingsremmende producten.", duration: "75 min" },
+      { name: "Acne Behandeling", desc: "Gerichte behandeling voor acne-gevoelige huid met kalmerende en zuiverende producten.", duration: "75 min" },
       { name: "Pigmentatie Behandeling", desc: "Behandeling voor het verminderen van donkere vlekken en ongelijkmatige teint.", duration: "90 min" },
       { name: "Rosacea Behandeling", desc: "Kalmerende behandeling voor gevoelige huid met roodheid.", duration: "60 min" },
     ],
@@ -48,7 +48,7 @@ const treatments = [
     items: [
       { name: "Observ 520x Huidscan", desc: "Geavanceerde analyse van uw huid met de nieuwste scantechnologie.", duration: "30 min" },
       { name: "Skin activ/Microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageen productie.", duration: "90 min" },
-      { name: "Coldplasma-behandeling", desc: "Behandeling stimuleert huidvernieuwing op cellulair niveau. Het vermindert bacteriën, ontstekingen en versnelt het herstelproces.", duration: "30 min" },
+      { name: "Coldplasma-behandeling", desc: "Behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
     ],
   },
   {

@@ -48,8 +48,8 @@ const devices = [
     name: "Coldplasma",
     tagline: "Krachtige technologie voor een gezonde huid",
     description:
-      "Coldplasma is een geavanceerde behandeltechnologie die gebruik maakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige werking op de huid: het doodt bacteriën, vermindert ontstekingen en versnelt het natuurlijke herstelproces van de huid. Coldplasma is bijzonder effectief bij acne, roodheid en huidveroudering. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
-    benefits: ["Vermindert bacteriën en ontstekingen", "Versnelt huidherstel", "Effectief bij acne en roodheid", "Pijnloos en niet-invasief"],
+      "Coldplasma is een geavanceerde behandeltechnologie die gebruik maakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige, herstellende werking op de huid: de huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit. Coldplasma is bijzonder geschikt bij een onzuivere, gevoelige of verouderde huid. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
+    benefits: ["Verfrist en egaliseert de huid", "Zichtbaar stralender resultaat", "Geschikt bij onzuivere of gevoelige huid", "Pijnloos en niet-invasief"],
     color: "oklch(0.78_0.06_15)",
   },
   {

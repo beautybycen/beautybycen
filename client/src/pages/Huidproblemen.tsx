@@ -27,7 +27,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 const skinProblems = [
   {
     title: "Acne & Onzuiverheden",
-    description: "Acne is een van de meest voorkomende huidproblemen. Wij bieden effectieve behandelingen die de huid reinigen, ontstekingen verminderen en littekens minimaliseren.",
+    description: "Acne is een van de meest voorkomende huidproblemen. Wij bieden effectieve behandelingen die de huid reinigen, kalmeren en de huidconditie zichtbaar verbeteren.",
     symptoms: ["Mee-eters", "Puistjes", "Cysten", "Littekens"],
     color: "oklch(0.78_0.06_15)",
   },
