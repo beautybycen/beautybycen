@@ -12,11 +12,11 @@ import { Star, ChevronRight, Sparkles, Scan, Heart, Users } from "lucide-react";
 // Image CDN URLs
 const IMAGES = {
   heroTreatment: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/hero_treatment-82xgWT4uXVJqrCpgqv3aD8.webp",
-  heroPortrait: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy_portrait_5f3ed40b.jpg",
-  salonInterior: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon_interior-5CtnKZqzy57yHGZHBHXZ5c.webp",
+  heroPortrait: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy-observ-portrait_21f10235.jpg",
+  salonInterior: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon-interior-new_37fa9c8e.jpg",
   skinCloseup: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/skin_closeup-f6UtsUNoHL5wtDLPbX4W3a.webp",
   treatmentHands: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/treatment_hands-D7K7cGQsDKef5aZcRBFayX.webp",
-  salonRoom: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon_room1_8c569bae.webp",
+  salonRoom: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/treatment-room_5d2352d7.jpg",
 };
 
 const services = [
