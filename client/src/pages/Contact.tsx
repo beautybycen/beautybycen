@@ -152,7 +152,7 @@ export default function Contact() {
                 {/* Salon image */}
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon_interior-5CtnKZqzy57yHGZHBHXZ5c.webp"
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon-mirror_7e1bf1f0.jpg"
                     alt="Beauty By Cen salon"
                     className="w-full h-full object-cover"
                   />
