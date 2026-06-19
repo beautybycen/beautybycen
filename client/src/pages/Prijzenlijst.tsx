@@ -9,10 +9,11 @@ import { ChevronRight } from "lucide-react";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.style.transitionDelay = \`\${delay}ms\`;
+    el.style.transitionDelay = `${delay}ms`;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.unobserve(el); } },
       { threshold: 0.08 }
@@ -20,7 +21,8 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
     observer.observe(el);
     return () => observer.disconnect();
   }, [delay]);
-  return <div ref={ref} className={\`fade-up \${className}\`}>{children}</div>;
+
+  return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
 }
 
 const priceCategories = [
@@ -70,96 +72,120 @@ const priceCategories = [
   {
     category: "Pakketten",
     items: [
-      { name: "Starterspack (3 behandelingen + 1 gratis)", duration: "4x 60 min", price: "" },
-      { name: "Intensief Pakket (5 behandelingen + 1 gratis)", duration: "6x 75 min", price: "" },
-      { name: "Jaarlijks Onderhoud (10 behandelingen + 2 gratis)", duration: "12x 60 min", price: "" },
+      { 
+        name: "Starterspack (3 behandelingen + 1 gratis)", 
+        duration: "4x 60 min", 
+        price: "€250" 
+      },
+      { 
+        name: "Intensief Pakket (5 behandelingen + 1 gratis)", 
+        duration: "6x 75 min", 
+        price: "€495" 
+      },
+      { 
+        name: "Jaarlijks Onderhoud (10 behandelingen + 2 gratis)", 
+        duration: "12x 60 min", 
+        price: "€950" 
+      },
     ],
   },
 ];
 
 export default function Prijzenlijst() {
   return (
-    <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
+    <div className="min-h-screen bg-[#FDFBF9]">
       <Navigation />
-
-      {/* Page header */}
-      <section className="relative pt-36 pb-20 bg-[oklch(0.22_0.04_50)] overflow-hidden">
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="font-body text-xs tracking-[0.2em] uppercase text-[oklch(0.78_0.06_15)] mb-3">
-            Transparante Prijzen
-          </p>
-          <h1 className="font-display text-5xl md:text-6xl font-300 text-white leading-[1.1]">
-            Prijzenlijst
-          </h1>
-          <p className="font-body text-base text-white/65 mt-4 max-w-lg">
-            Duidelijke, eerlijke prijzen voor alle behandelingen. Geen verborgen kosten.
-          </p>
+      
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[#3D2B1F]/5 pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <FadeUp className="text-center max-w-3xl mx-auto">
+            <span className="text-[#8C7355] font-medium tracking-widest uppercase text-sm mb-4 block">
+              Transparante Prijzen
+            </span>
+            <h1 className="text-4xl md:text-5xl font-serif text-[#3D2B1F] mb-6">
+              Prijzenlijst
+            </h1>
+            <p className="text-lg text-[#5C4D3E] font-light leading-relaxed">
+              Duidelijke, eerlijke prijzen voor alle behandelingen. Geen verborgen kosten.
+            </p>
+          </FadeUp>
         </div>
       </section>
 
-      {/* Note */}
-      <section className="py-10 bg-[oklch(0.94_0.018_75)] border-b border-[oklch(0.88_0.02_75)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="font-body text-sm text-[oklch(0.45_0.04_50)] leading-relaxed max-w-2xl">
-            <strong className="text-[oklch(0.22_0.04_50)]">Let op:</strong> Bovenstaande prijzen zijn indicatief. De definitieve prijs wordt bepaald na een persoonlijk consult, waarbij uw huidtype en behandelwensen worden besproken. Neem contact op voor een exacte prijsopgave.
-          </p>
-        </div>
-      </section>
-
-      {/* Price list */}
+      {/* Pricing Content */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="space-y-14">
-            {priceCategories.map((category, ci) => (
-              <FadeUp key={ci} delay={ci * 80}>
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <h2 className="font-display text-3xl font-400 text-[oklch(0.22_0.04_50)] whitespace-nowrap">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <FadeUp delay={200} className="mb-12 bg-[#8C7355]/10 p-6 rounded-2xl border border-[#8C7355]/20">
+              <p className="text-[#5C4D3E] text-sm italic leading-relaxed">
+                <strong>Let op:</strong> Bovenstaande prijzen zijn indicatief. De definitieve prijs wordt bepaald na een persoonlijk consult, waarbij uw huidtype en behandelwensen worden besproken. Neem contact op voor een exacte prijsopgave.
+              </p>
+            </FadeUp>
+
+            <div className="space-y-16">
+              {priceCategories.map((category, catIdx) => (
+                <FadeUp key={catIdx} delay={catIdx * 100}>
+                  <div className="flex items-center gap-4 mb-8">
+                    <h2 className="text-2xl font-serif text-[#3D2B1F] whitespace-nowrap">
                       {category.category}
                     </h2>
-                    <div className="flex-1 hairline" />
+                    <div className="h-px bg-[#8C7355]/20 w-full" />
                   </div>
-                  <div className="bg-white rounded-2xl shadow-sm border border-[oklch(0.92_0.018_75)] overflow-hidden">
-                    {category.items.map((item, ii) => (
-                      <div
-                        key={ii}
-                        className={\`flex items-center justify-between px-7 py-5 \${
-                          ii < category.items.length - 1 ? "border-b border-[oklch(0.94_0.018_75)]" : ""
-                        } hover:bg-[oklch(0.97_0.015_75)] transition-colors duration-200\`}
+                  
+                  <div className="bg-white rounded-3xl shadow-sm border border-[#3D2B1F]/5 overflow-hidden">
+                    {category.items.map((item, itemIdx) => (
+                      <div 
+                        key={itemIdx}
+                        className={`p-6 flex flex-wrap items-center justify-between gap-4 ${
+                          itemIdx !== category.items.length - 1 ? 'border-b border-[#3D2B1F]/5' : ''
+                        }`}
                       >
                         <div className="flex-1">
-                          <h3 className="font-body font-600 text-sm text-[oklch(0.22_0.04_50)]">
+                          <h3 className="text-[#3D2B1F] font-medium mb-1">
                             {item.name}
                           </h3>
-                          <p className="font-body text-xs text-[oklch(0.62_0.04_50)] mt-0.5">
-                            {item.duration}
-                          </p>
+                          {item.duration && (
+                            <p className="text-[#8C7355] text-sm font-light uppercase tracking-wider">
+                              {item.duration}
+                            </p>
+                          )}
                         </div>
-                        <span className="font-display text-xl font-500 text-[oklch(0.62_0.09_50)] ml-8">
-                          {item.price}
-                        </span>
+                        <div className="text-right">
+                          <span className="text-[#3D2B1F] font-serif text-lg">
+                            {item.price}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+                </FadeUp>
+              ))}
+            </div>
 
-          {/* CTA */}
-          <FadeUp delay={200} className="mt-16 text-center">
-            <p className="font-body text-base text-[oklch(0.45_0.04_50)] mb-6">
-              Klaar om te beginnen? Boek uw behandeling online of neem contact op.
-            </p>
-            <a
-              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ZXpxwvB8QfAG-hZaafXgJb0HpAYOPSPyGHvbxHcpc2-UEFB95mXLmrso54Ow2W457FLTzBJxs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-body font-600 text-sm tracking-wide bg-[oklch(0.62_0.09_50)] text-white hover:bg-[oklch(0.55_0.09_50)] transition-all duration-300"
-            >
-              Boek Nu <ChevronRight size={16} />
-            </a>
-          </FadeUp>
+            {/* CTA Section */}
+            <FadeUp delay={600} className="mt-20 text-center bg-[#3D2B1F] rounded-3xl p-12 text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+              <div className="relative z-10">
+                <h2 className="text-2xl md:text-3xl font-serif mb-6">
+                  Klaar om te beginnen?
+                </h2>
+                <p className="text-white/80 font-light mb-10 max-w-xl mx-auto leading-relaxed text-lg">
+                  Boek uw behandeling online of neem contact op voor een persoonlijk huidadvies.
+                </p>
+                <a 
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ZXpxwvB8QfAG-hZaafXgJb0HpAYOPSPyGHvbxHcpc2-UEFB95mXLmrso54Ow2W457FLTzBJxs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#FDFBF9] text-[#3D2B1F] px-8 py-4 rounded-full hover:bg-[#8C7355] hover:text-white transition-all duration-500 font-medium group shadow-xl"
+                >
+                  Boek Nu
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
