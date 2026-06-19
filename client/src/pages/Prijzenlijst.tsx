@@ -12,7 +12,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.style.transitionDelay = `${delay}ms`;
+    el.style.transitionDelay = \`\${delay}ms\`;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.unobserve(el); } },
       { threshold: 0.08 }
@@ -20,7 +20,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
     observer.observe(el);
     return () => observer.disconnect();
   }, [delay]);
-  return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
+  return <div ref={ref} className={\`fade-up \${className}\`}>{children}</div>;
 }
 
 const priceCategories = [
@@ -67,13 +67,12 @@ const priceCategories = [
       { name: "Full Face", duration: "", price: "€150" },
     ],
   },
-
   {
     category: "Pakketten",
     items: [
-      { name: "Starterspack (3 behandelingen)", duration: "3x 60 min", price: "" },
-      { name: "Intensief Pakket (5 behandelingen)", duration: "5x 75 min", price: "" },
-      { name: "Jaarlijks Onderhoud (10 behandelingen)", duration: "10x 60 min", price: "" },
+      { name: "Starterspack (3 behandelingen + 1 gratis)", duration: "4x 60 min", price: "" },
+      { name: "Intensief Pakket (5 behandelingen + 1 gratis)", duration: "6x 75 min", price: "" },
+      { name: "Jaarlijks Onderhoud (10 behandelingen + 2 gratis)", duration: "12x 60 min", price: "" },
     ],
   },
 ];
@@ -124,9 +123,9 @@ export default function Prijzenlijst() {
                     {category.items.map((item, ii) => (
                       <div
                         key={ii}
-                        className={`flex items-center justify-between px-7 py-5 ${
+                        className={\`flex items-center justify-between px-7 py-5 \${
                           ii < category.items.length - 1 ? "border-b border-[oklch(0.94_0.018_75)]" : ""
-                        } hover:bg-[oklch(0.97_0.015_75)] transition-colors duration-200`}
+                        } hover:bg-[oklch(0.97_0.015_75)] transition-colors duration-200\`}
                       >
                         <div className="flex-1">
                           <h3 className="font-body font-600 text-sm text-[oklch(0.22_0.04_50)]">
