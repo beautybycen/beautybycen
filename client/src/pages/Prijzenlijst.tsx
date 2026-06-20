@@ -8,8 +8,12 @@ import Footer from "@/components/Footer";
 import { ChevronRight } from "lucide-react";
 
 
+
+
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+
+
 
 
   useEffect(() => {
@@ -25,8 +29,12 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   }, [delay]);
 
 
+
+
   return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
 }
+
+
 
 
 const priceCategories = [
@@ -67,7 +75,3 @@ const priceCategories = [
     ],
   },
   {
-    category: "Coldplasma",
-    items: [
-      { name: "Kaaklijn", duration: "", price: "€125" },
-      { name: "Full Face", duration: "", price: "€150" },
