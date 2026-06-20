@@ -10,6 +10,10 @@ import { ChevronRight, Award, Heart, Scan } from "lucide-react";
 
 
 
+
+
+
+
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -29,10 +33,18 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 
 
 
+
+
+
+
 export default function OverMij() {
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
       <Navigation />
+
+
+
+
 
 
 
@@ -59,6 +71,10 @@ export default function OverMij() {
 
 
 
+
+
+
+
       {/* Main about section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -67,11 +83,3 @@ export default function OverMij() {
             <FadeUp>
               <div className="relative">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy-products-portrait_1752ead5.jpg"
-                    alt="Cindy Nimmermeer"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </FadeUp>
