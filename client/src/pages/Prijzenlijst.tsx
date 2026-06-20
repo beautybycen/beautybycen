@@ -75,17 +75,17 @@ const priceCategories = [
       { 
         name: "Starterspack (3 behandelingen + 1 gratis)", 
         duration: "4x 60 min", 
-        price: "€250" 
+        price: "" 
       },
       { 
         name: "Intensief Pakket (5 behandelingen + 1 gratis)", 
         duration: "6x 75 min", 
-        price: "€495" 
+        price: "" 
       },
       { 
         name: "Jaarlijks Onderhoud (10 behandelingen + 2 gratis)", 
         duration: "12x 60 min", 
-        price: "€950" 
+        price: "" 
       },
     ],
   },
