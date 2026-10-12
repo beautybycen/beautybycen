@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -12,19 +13,32 @@ import Prijzenlijst from "./pages/Prijzenlijst";
 import Contact from "./pages/Contact";
 import Technologie from "./pages/Technologie";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/behandelingen"} component={Behandelingen} />
-      <Route path={"/huidproblemen"} component={Huidproblemen} />
-      <Route path={"/over-mij"} component={OverMij} />
-      <Route path={"/prijzenlijst"} component={Prijzenlijst} />
-      <Route path={"/contact"} component={Contact} />
-      <Route path={"/technologie"} component={Technologie} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/behandelingen"} component={Behandelingen} />
+        <Route path={"/huidproblemen"} component={Huidproblemen} />
+        <Route path={"/over-mij"} component={OverMij} />
+        <Route path={"/prijzenlijst"} component={Prijzenlijst} />
+        <Route path={"/contact"} component={Contact} />
+        <Route path={"/technologie"} component={Technologie} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
