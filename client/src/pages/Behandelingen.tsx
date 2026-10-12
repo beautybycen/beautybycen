@@ -25,20 +25,20 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 
 const treatments = [
   {
-    category: "Normal/Basis behandelingen",
+    category: "Basisbehandelingen",
     items: [
-      { name: "Normal/Basis behandelingen", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
+      { name: "Basisbehandeling", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
       { name: "Diepe Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
       { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
       { name: "Hydraterende Behandeling", desc: "Intensieve vochtinbreng voor een droge of gedehydrateerde huid.", duration: "60 min" },
-      { name: "Jelly Mask", desc: "Op behoeften van wat de huid nodig heeft. Een verzorgende jelly mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
-      { name: "Peel-off Mask", desc: "Op behoeften van wat de huid nodig heeft. Een reinigende peel-off mask afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
+      { name: "Jelly Mask", desc: "Afgestemd op de behoeften van uw huid. Een verzorgend jellymasker afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
+      { name: "Peel-off Mask", desc: "Afgestemd op de behoeften van uw huid. Een reinigend peel-off masker afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
     ],
   },
   {
     category: "Huidproblemen",
     items: [
-      { name: "Acne Behandeling", desc: "Gerichte behandeling voor acne-gevoelige huid met kalmerende en zuiverende producten.", duration: "75 min" },
+      { name: "Acne Behandeling", desc: "Gerichte behandeling voor acnegevoelige huid met kalmerende en zuiverende producten.", duration: "75 min" },
       { name: "Pigmentatie Behandeling", desc: "Behandeling voor het verminderen van donkere vlekken en ongelijkmatige teint.", duration: "90 min" },
       { name: "Rosacea Behandeling", desc: "Kalmerende behandeling voor gevoelige huid met roodheid.", duration: "60 min" },
     ],
@@ -47,14 +47,14 @@ const treatments = [
     category: "Geavanceerde Technologie",
     items: [
       { name: "Observ 520x Huidscan", desc: "Geavanceerde analyse van uw huid met de nieuwste scantechnologie.", duration: "30 min" },
-      { name: "Skin activ/Microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageen productie.", duration: "90 min" },
-      { name: "Coldplasma-behandeling", desc: "Behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
+      { name: "Skin active / microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageenproductie.", duration: "90 min" },
+      { name: "Coldplasma-behandeling", desc: "Deze behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
     ],
   },
   {
-    category: "Donkere Huid Specialist",
+    category: "Specialist in de donkere huid",
     items: [
-      { name: "Behandeling Donkere Huid", desc: "Gespecialiseerde behandeling afgestemd op de unieke behoeften van donkere huid.", duration: "75 min" },
+      { name: "Behandeling Donkere Huid", desc: "Gespecialiseerde behandeling afgestemd op de unieke behoeften van de donkere huid.", duration: "75 min" },
       { name: "Hyperpigmentatie Behandeling", desc: "Gerichte behandeling voor het egaliseren van de huidtint.", duration: "90 min" },
     ],
   },
