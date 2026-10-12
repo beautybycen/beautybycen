@@ -48,7 +48,7 @@ export default function Navigation() {
           <Link href="/">
             <div className="flex items-center gap-3">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/logo_64373521.webp"
+                src="/images/logo.webp"
                 alt="Beauty By Cen"
                 className="h-14 w-auto object-contain"
               />

@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/logo_64373521.webp"
+              src="/images/logo.webp"
               alt="Beauty By Cen"
               className="h-16 w-auto object-contain mb-4 brightness-0 invert opacity-90"
             />

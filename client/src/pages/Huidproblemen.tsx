@@ -72,7 +72,7 @@ export default function Huidproblemen() {
       <section className="relative pt-36 pb-20 bg-[oklch(0.22_0.04_50)] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/skin_closeup-f6UtsUNoHL5wtDLPbX4W3a.webp"
+            src="/images/treatment1.jpg"
             alt=""
             className="w-full h-full object-cover"
           />

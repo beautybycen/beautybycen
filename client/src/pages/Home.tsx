@@ -9,14 +9,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Star, ChevronRight, Sparkles, Scan, Heart, Users } from "lucide-react";
 
-// Image CDN URLs
 const IMAGES = {
-  heroTreatment: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/hero_treatment-82xgWT4uXVJqrCpgqv3aD8.webp",
-  heroPortrait: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/cindy-observ-portrait_21f10235.jpg",
-  salonInterior: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/salon-interior-new_37fa9c8e.jpg",
-  skinCloseup: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/skin_closeup-f6UtsUNoHL5wtDLPbX4W3a.webp",
-  treatmentHands: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/treatment_hands-D7K7cGQsDKef5aZcRBFayX.webp",
-  salonRoom: "https://d2xsxph8kpxj0f.cloudfront.net/310519663493256087/GLMc3BPPhJYdeh8cghuPE5/treatment-room_5d2352d7.jpg",
+  heroTreatment: "/images/dark_skin_treatment.jpg",
+  heroPortrait: "/images/cindy-observ-portrait.jpg",
+  salonInterior: "/images/salon-interior.webp",
+  skinCloseup: "/images/treatment1.jpg",
+  treatmentHands: "/images/treatment3.jpg",
+  salonRoom: "/images/treatment-room.webp",
 };
 
 const services = [
