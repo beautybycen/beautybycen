@@ -69,7 +69,7 @@ export default function OverMij() {
               <FadeUp delay={100}>
                 <div className="inline-flex items-center space-x-2 text-[oklch(0.55_0.04_50)] font-body text-sm uppercase tracking-widest mb-2">
                   <Award size={16} />
-                  <span>Gecertificeerd Huidspecialist</span>
+                  <span>Gecertificeerd huidspecialist</span>
                 </div>
                 <h2 className="font-display text-4xl text-[oklch(0.22_0.04_50)] leading-tight mb-6">
                   Mijn passie voor huidverbetering
@@ -82,7 +82,7 @@ export default function OverMij() {
                     Door de jaren heen heb ik mij gespecialiseerd in geavanceerde huidverbeteringstechnieken. Ik geloof niet in 'one size fits all' oplossingen, maar in een persoonlijke aanpak die gebaseerd is op wetenschap en precisie.
                   </p>
                   <p>
-                    Donkere huid heeft unieke kenmerken en vereist specifieke kennis en producten.
+                    De donkere huid heeft unieke kenmerken en vereist specifieke kennis en producten.
                   </p>
                 </div>
               </FadeUp>

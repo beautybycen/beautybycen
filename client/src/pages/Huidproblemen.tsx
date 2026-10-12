@@ -45,7 +45,7 @@ const skinProblems = [
   },
   {
     title: "Gevoelige Huid & Rosacea",
-    description: "Gevoelige huid en rosacea vereisen een zachte, kalmerende aanpak. Onze behandelingen verminderen roodheid en versterken de huidbarrière.",
+    description: "Een gevoelige huid en rosacea vereisen een zachte, kalmerende aanpak. Onze behandelingen verminderen roodheid en versterken de huidbarrière.",
     symptoms: ["Roodheid", "Branderig gevoel", "Zichtbare bloedvaatjes", "Vlekken"],
     color: "oklch(0.78_0.06_15)",
   },
@@ -57,8 +57,8 @@ const skinProblems = [
   },
   {
     title: "Donkere Huid Specialisatie",
-    description: "Donkere huid heeft unieke behoeften. Als specialist in donkere huidtypes bieden wij veilige en effectieve behandelingen die rekening houden met de specifieke kenmerken.",
-    symptoms: ["Hyperpigmentatie", "Keloid littekens", "Ongelijkmatige teint", "Droogheid"],
+    description: "De donkere huid heeft unieke behoeften. Als specialist in donkere huidtypes bieden wij veilige en effectieve behandelingen die rekening houden met de specifieke kenmerken.",
+    symptoms: ["Hyperpigmentatie", "Keloïdlittekens", "Ongelijkmatige teint", "Droogheid"],
     color: "oklch(0.72_0.05_145)",
   },
 ];
@@ -136,7 +136,7 @@ export default function Huidproblemen() {
           {/* CTA */}
           <FadeUp delay={200} className="mt-16 text-center">
             <p className="font-body text-base text-[oklch(0.45_0.04_50)] mb-6">
-              Herkent u uw huidprobleem? Boek een consult en wij helpen u verder.
+              Herkent u uw huidprobleem? Boek een consult en wij helpen u graag verder.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a

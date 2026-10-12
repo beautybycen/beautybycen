@@ -39,7 +39,7 @@ const devices = [
     name: "Skin Active — Microneedling zonder naalden",
     tagline: "Huidvernieuwing zonder pijn",
     description:
-      "De Skin Active behandeling is een innovatieve techniek die de voordelen van microneedling biedt, maar dan volledig zonder naalden. Via elektroporatie worden actieve werkzame stoffen diep in de huid gebracht, waardoor de huid van binnenuit wordt gevoed en vernieuwd. De behandeling stimuleert de aanmaak van collageen en elastine, verbetert de huidtextuur en geeft een zichtbaar stralend resultaat. Ideaal voor wie wil investeren in hun huid zonder ongemak.",
+      "De Skin Active-behandeling is een innovatieve techniek die de voordelen van microneedling biedt, maar dan volledig zonder naalden. Via elektroporatie worden actieve werkzame stoffen diep in de huid gebracht, waardoor de huid van binnenuit wordt gevoed en vernieuwd. De behandeling stimuleert de aanmaak van collageen en elastine, verbetert de huidtextuur en geeft een zichtbaar stralend resultaat. Ideaal voor wie wil investeren in een gezonde huid zonder ongemak.",
     benefits: ["Geen naalden, geen pijn", "Diepe toediening van serums", "Stimuleert collageenproductie", "Verbetert huidtextuur en uitstraling"],
     color: "oklch(0.72_0.05_145)",
   },
@@ -48,7 +48,7 @@ const devices = [
     name: "Coldplasma",
     tagline: "Krachtige technologie voor een gezonde huid",
     description:
-      "Coldplasma is een geavanceerde behandeltechnologie die gebruik maakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige, herstellende werking op de huid: de huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit. Coldplasma is bijzonder geschikt bij een onzuivere, gevoelige of verouderde huid. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
+      "Coldplasma is een geavanceerde behandeltechnologie die gebruikmaakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige, herstellende werking op de huid: de huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit. Coldplasma is bijzonder geschikt bij een onzuivere, gevoelige of verouderde huid. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
     benefits: ["Verfrist en egaliseert de huid", "Zichtbaar stralender resultaat", "Geschikt bij onzuivere of gevoelige huid", "Pijnloos en niet-invasief"],
     color: "oklch(0.78_0.06_15)",
   },
@@ -154,7 +154,7 @@ export default function Technologie() {
                 Benieuwd welke behandeling bij u past?
               </h2>
               <p className="font-body text-base text-white/65 mb-8 max-w-md mx-auto">
-                Boek een consult en ik adviseer u persoonlijk over de beste aanpak voor uw huid.
+                Boek een consult en wij adviseren u graag persoonlijk over de beste aanpak voor uw huid.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a

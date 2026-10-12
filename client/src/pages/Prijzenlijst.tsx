@@ -27,20 +27,20 @@ const priceCategories = [
   {
     category: "Gezichtsbehandelingen",
     items: [
-      { name: "Normal/Basis", duration: "", price: "€50" },
-      { name: "* Met mask", duration: "", price: "+ €10" },
-      { name: "* Yelly mask", duration: "", price: "+ €12,50" },
-      { name: "* Peeloff mask", duration: "", price: "+ €15" },
-      { name: "* Met 1 serum naar behoeften v/d huid", duration: "", price: "+ €30" },
-      { name: "Een peeling met glow", duration: "", price: "+ €30" },
-      { name: "* Met ledigen", duration: "", price: "+ €35" },
+      { name: "Basisbehandeling", duration: "", price: "€50" },
+      { name: "* Met masker", duration: "", price: "+ €10" },
+      { name: "* Jelly masker", duration: "", price: "+ €12,50" },
+      { name: "* Peel-off masker", duration: "", price: "+ €15" },
+      { name: "* Met 1 serum naar behoefte van de huid", duration: "", price: "+ €30" },
+      { name: "* Peeling met glow", duration: "", price: "+ €30" },
+      { name: "* Met onzuiverheden verwijderen", duration: "", price: "+ €35" },
     ],
   },
   {
-    category: "Acne behandeling",
+    category: "Acnebehandeling",
     items: [
-      { name: "Acne behandeling", duration: "", price: "€150" },
-      { name: "* Studenten korting", duration: "", price: "€100" },
+      { name: "Acnebehandeling", duration: "", price: "€150" },
+      { name: "* Studentenkorting", duration: "", price: "€100" },
     ],
   },
   {
@@ -70,7 +70,7 @@ const priceCategories = [
   {
     category: "Pakketten",
     items: [
-      { name: "Starterspack (3 behandelingen + 1 gratis)", duration: "4x 60 min", price: "" },
+      { name: "Starterspakket (3 behandelingen + 1 gratis)", duration: "4x 60 min", price: "" },
       { name: "Intensief Pakket (5 behandelingen + 1 gratis)", duration: "6x 75 min", price: "" },
       { name: "Jaarlijks Onderhoud (10 behandelingen + 2 gratis)", duration: "12x 60 min", price: "" },
     ],
