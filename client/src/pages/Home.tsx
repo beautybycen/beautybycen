@@ -55,7 +55,7 @@ const reviews = [
   {
     name: "Fatima B.",
     rating: 5,
-    text: "Eindelijk een huidspecialist die echt verstand heeft van donkere huid. Ik ben zo blij dat ik Beauty by Cen heb gevonden!",
+    text: "Eindelijk een huidspecialist die echt verstand heeft van de donkere huid. Ik ben zo blij dat ik Beauty by Cen heb gevonden!",
     date: "Februari 2024",
   },
   {
@@ -191,7 +191,7 @@ export default function Home() {
                 {[
                   { title: "Professionele huidspecialist", desc: "Gecertificeerd en gespecialiseerd in huidanalyse en behandelingen" },
                   { title: "Observ 520x technologie", desc: "Geavanceerde huidscan voor een nauwkeurige diagnose" },
-                  { title: "Specialist in donkere huid", desc: "Unieke expertise in de behandeling van donkere en gemengde huidtypes" },
+                  { title: "Specialist in de donkere huid", desc: "Unieke expertise in de behandeling van donkere en gemengde huidtypes" },
                   { title: "Persoonlijk behandelplan", desc: "Elke behandeling volledig afgestemd op uw specifieke huidbehoeften" },
                 ].map((item, i) => (
                   <FadeUp key={i} delay={i * 100}>
@@ -295,14 +295,14 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <FadeUp>
             <p className="font-body text-xs tracking-[0.2em] uppercase text-[oklch(0.78_0.06_15)] mb-4">
-              Ons Salon
+              Onze salon
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-300 text-white leading-[1.15] mb-6 max-w-2xl mx-auto">
               Een plek waar u zich{" "}
               <em className="italic text-[oklch(0.78_0.06_15)]">thuis</em> voelt
             </h2>
             <p className="font-body text-base text-white/70 max-w-lg mx-auto mb-10">
-              Ons modern ingerichte salon in Zaandam biedt een warme, professionele omgeving waar u volledig kunt ontspannen.
+              Onze modern ingerichte salon in Zaandam biedt een warme, professionele omgeving waar u volledig kunt ontspannen.
             </p>
             <Link href="/contact">
               <span className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-body font-600 text-sm tracking-wide bg-white text-[oklch(0.22_0.04_50)] hover:bg-[oklch(0.92_0.018_75)] transition-all duration-300">
@@ -382,7 +382,7 @@ export default function Home() {
               </p>
               <h2 className="font-display text-4xl md:text-5xl font-300 text-[oklch(0.22_0.04_50)] leading-[1.15] mb-6">
                 Passie voor{" "}
-                <em className="italic text-[oklch(0.62_0.09_50)]">gezonde huid</em>
+                <em className="italic text-[oklch(0.62_0.09_50)]">een gezonde huid</em>
               </h2>
               <p className="font-body text-base text-[oklch(0.45_0.04_50)] leading-relaxed mb-5">
                 Cindy Nimmermeer is een gedreven huidspecialist met een bijzondere expertise in donkere en gemengde huidtypes. Met geavanceerde technologie zoals de Observ 520x huidscan biedt zij behandelingen die verder gaan dan het oppervlak.
@@ -392,7 +392,7 @@ export default function Home() {
               </p>
               <Link href="/over-mij">
                 <span className="inline-flex items-center gap-2 font-body font-600 text-sm text-[oklch(0.62_0.09_50)] hover:gap-3 transition-all duration-300">
-                  Lees meer over mij
+                  Lees meer over Cindy
                   <ChevronRight size={16} />
                 </span>
               </Link>
