@@ -29,7 +29,7 @@ function SkinCircle({
   type,
 }: {
   variant: "before" | "after";
-  type: "blemishes" | "redness" | "dullness" | "absorption";
+  type: "blemishes" | "redness" | "dullness" | "absorption" | "beard";
 }) {
   const idPrefix = `cp-${type}-${variant}`;
 
@@ -177,6 +177,41 @@ function SkinCircle({
           <circle cx="40" cy="40" r="35" fill="none" stroke="#ffffff" strokeWidth="1.2" opacity="0.35" />
         </g>
       )}
+
+      {/* Beard hair growth graphics */}
+      {type === "beard" && variant === "before" && (
+        <g>
+          {/* Sparse, patchy stubble with dormant follicles */}
+          <circle cx="28" cy="42" r="1.3" fill="#52433d" opacity="0.65" />
+          <circle cx="34" cy="50" r="1.3" fill="#52433d" opacity="0.7" />
+          <circle cx="24" cy="48" r="1.1" fill="#52433d" opacity="0.55" />
+          <circle cx="48" cy="45" r="1.3" fill="#52433d" opacity="0.65" />
+          <circle cx="56" cy="40" r="1.1" fill="#52433d" opacity="0.5" />
+          <circle cx="52" cy="52" r="1.3" fill="#52433d" opacity="0.7" />
+          <circle cx="40" cy="58" r="1.4" fill="#52433d" opacity="0.7" />
+          <circle cx="30" cy="58" r="1.1" fill="#52433d" opacity="0.55" />
+          <circle cx="44" cy="50" r="1.2" fill="#52433d" opacity="0.6" />
+        </g>
+      )}
+
+      {type === "beard" && variant === "after" && (
+        <g>
+          {/* Follicle activation glow aura */}
+          <ellipse cx="40" cy="50" rx="26" ry="18" fill="#e89e78" opacity="0.22" />
+          {/* Dense, activated, healthy beard follicles */}
+          {[
+            [22, 38], [28, 36], [34, 38], [40, 36], [46, 38], [52, 36], [58, 38],
+            [20, 44], [25, 43], [30, 44], [35, 43], [40, 44], [45, 43], [50, 44], [55, 43], [60, 44],
+            [22, 50], [27, 49], [32, 50], [37, 49], [42, 50], [47, 49], [52, 50], [57, 49],
+            [26, 56], [31, 55], [36, 56], [41, 55], [46, 56], [51, 55],
+            [33, 62], [38, 61], [43, 62], [47, 61]
+          ].map(([cx, cy], i) => (
+            <circle key={i} cx={cx} cy={cy} r="1.4" fill="#382e29" opacity="0.88" />
+          ))}
+          {/* Healthy skin highlight */}
+          <ellipse cx="36" cy="28" rx="16" ry="10" fill="#ffffff" opacity="0.22" />
+        </g>
+      )}
     </svg>
   );
 }
@@ -206,6 +241,12 @@ const coldPlasmaEffects = [
     description:
       "Na de behandeling neemt de huid serums en crèmes beter op. Producten blijven niet op de huid liggen maar trekken dieper in en doen meer.",
   },
+  {
+    type: "beard" as const,
+    title: "Stimulatie van baard- & haargroei",
+    description:
+      "Cold plasma activeert de microcirculatie en stimuleert slapende haarzakjes. Door de verbeterde doorbloeding en diepere opname van actieve groeiserums krijgt de baardgroei een krachtige natuurlijke impuls voor een vollere baard.",
+  },
 ];
 
 function ColdPlasmaShowcase() {
@@ -217,52 +258,98 @@ function ColdPlasmaShowcase() {
           Beauty By Cen · Cold Plasma
         </p>
         <h3 className="font-display text-2xl md:text-3xl text-[oklch(0.22_0.04_50)] font-400 mb-3 leading-tight">
-          Wat doet cold plasma voor uw huid?
+          Wat doet cold plasma voor uw huid & baardgroei?
         </h3>
         <p className="font-body text-base text-[oklch(0.45_0.04_50)] max-w-2xl leading-relaxed">
-          Per huidsituatie ziet u wat er verandert. Het zachte, koude plasma pakt bacteriën aan, kalmeert en geeft de huid een prikkel om zichzelf te herstellen.
+          Per situatie ziet u wat er verandert. Het zachte, koude plasma pakt bacteriën aan, kalmeert, stimuleert celvernieuwing én activeert slapende haarzakjes voor een gezonde huid en vollere baardgroei.
         </p>
       </div>
 
-      {/* Grid of 4 effects */}
+      {/* Grid of effects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {coldPlasmaEffects.map((effect, idx) => (
           <div
             key={idx}
-            className="bg-[oklch(0.985_0.008_75)] rounded-2xl p-6 border border-[oklch(0.92_0.018_75)] hover:border-[oklch(0.85_0.03_50)] transition-all duration-300 hover:shadow-xs flex flex-col justify-between"
+            className={`rounded-2xl p-6 border transition-all duration-300 hover:shadow-xs flex flex-col justify-between ${
+              effect.type === "beard"
+                ? "md:col-span-2 bg-gradient-to-br from-[oklch(0.985_0.008_75)] via-[oklch(0.97_0.015_72)] to-[oklch(0.95_0.022_65)] border-[oklch(0.85_0.04_50)] shadow-2xs"
+                : "bg-[oklch(0.985_0.008_75)] border-[oklch(0.92_0.018_75)] hover:border-[oklch(0.85_0.03_50)]"
+            }`}
           >
-            {/* Visual comparison */}
-            <div className="flex items-center justify-between sm:justify-center sm:gap-8 bg-white/80 rounded-xl p-4 border border-[oklch(0.94_0.012_75)] shadow-2xs mb-5">
-              <div className="flex flex-col items-center">
-                <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.55_0.04_50)] mb-2">
-                  Voor
-                </span>
-                <SkinCircle variant="before" type={effect.type} />
-              </div>
+            {effect.type === "beard" ? (
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                {/* Visual comparison */}
+                <div className="flex items-center justify-between sm:justify-center sm:gap-8 bg-white/85 rounded-xl p-4 border border-[oklch(0.92_0.02_65)] shadow-2xs shrink-0">
+                  <div className="flex flex-col items-center">
+                    <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.55_0.04_50)] mb-2">
+                      Voor
+                    </span>
+                    <SkinCircle variant="before" type={effect.type} />
+                  </div>
 
-              <div className="flex flex-col items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-[oklch(0.94_0.018_75)] flex items-center justify-center text-[oklch(0.62_0.09_50)] shadow-2xs">
-                  <ArrowRight className="w-4 h-4" />
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-[oklch(0.92_0.03_50)] flex items-center justify-center text-[oklch(0.40_0.06_50)] shadow-2xs">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                    <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.62_0.09_50)] mb-2">
+                      Na
+                    </span>
+                    <SkinCircle variant="after" type={effect.type} />
+                  </div>
+                </div>
+
+                {/* Content text */}
+                <div className="flex-1">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-600 tracking-wider uppercase bg-[oklch(0.90_0.04_65)] text-[oklch(0.32_0.05_50)] mb-2.5">
+                    Speciale toepassing · Baard- & Haarverzorging
+                  </span>
+                  <h4 className="font-display text-xl md:text-2xl font-500 text-[oklch(0.22_0.04_50)] mb-2 leading-snug">
+                    {effect.title}
+                  </h4>
+                  <p className="font-body text-sm text-[oklch(0.45_0.04_50)] leading-relaxed">
+                    {effect.description}
+                  </p>
                 </div>
               </div>
+            ) : (
+              <>
+                {/* Visual comparison */}
+                <div className="flex items-center justify-between sm:justify-center sm:gap-8 bg-white/80 rounded-xl p-4 border border-[oklch(0.94_0.012_75)] shadow-2xs mb-5">
+                  <div className="flex flex-col items-center">
+                    <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.55_0.04_50)] mb-2">
+                      Voor
+                    </span>
+                    <SkinCircle variant="before" type={effect.type} />
+                  </div>
 
-              <div className="flex flex-col items-center">
-                <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.62_0.09_50)] mb-2">
-                  Na
-                </span>
-                <SkinCircle variant="after" type={effect.type} />
-              </div>
-            </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-[oklch(0.94_0.018_75)] flex items-center justify-center text-[oklch(0.62_0.09_50)] shadow-2xs">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
 
-            {/* Content text */}
-            <div>
-              <h4 className="font-display text-xl font-500 text-[oklch(0.22_0.04_50)] mb-2 leading-snug">
-                {effect.title}
-              </h4>
-              <p className="font-body text-sm text-[oklch(0.45_0.04_50)] leading-relaxed">
-                {effect.description}
-              </p>
-            </div>
+                  <div className="flex flex-col items-center">
+                    <span className="font-body text-[11px] font-600 tracking-[0.16em] uppercase text-[oklch(0.62_0.09_50)] mb-2">
+                      Na
+                    </span>
+                    <SkinCircle variant="after" type={effect.type} />
+                  </div>
+                </div>
+
+                {/* Content text */}
+                <div>
+                  <h4 className="font-display text-xl font-500 text-[oklch(0.22_0.04_50)] mb-2 leading-snug">
+                    {effect.title}
+                  </h4>
+                  <p className="font-body text-sm text-[oklch(0.45_0.04_50)] leading-relaxed">
+                    {effect.description}
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         ))}
       </div>
@@ -307,10 +394,16 @@ const devices = [
   {
     number: "03",
     name: "Coldplasma",
-    tagline: "Krachtige technologie voor een gezonde huid",
+    tagline: "Krachtige technologie voor huid- én baardhaargroei",
     description:
-      "Coldplasma is een geavanceerde behandeltechnologie die gebruikmaakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige, herstellende werking op de huid: de huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit. Coldplasma is bijzonder geschikt bij een onzuivere, gevoelige of verouderde huid. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
-    benefits: ["Verfrist en egaliseert de huid", "Zichtbaar stralender resultaat", "Geschikt bij onzuivere of gevoelige huid", "Pijnloos en niet-invasief"],
+      "Coldplasma is een geavanceerde behandeltechnologie die gebruikmaakt van geïoniseerde lucht op lage temperatuur. Het plasma heeft een krachtige, herstellende werking op de huid: de huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit. Daarnaast wordt cold plasma zeer effectief ingezet voor het stimuleren van baard- en haargroei door slapende haarzakjes te activeren, de microcirculatie te versterken en actieve serums dieper in de huid te laten inwerken. De behandeling is pijnloos, niet-invasief en geschikt voor vrijwel alle huidtypes.",
+    benefits: [
+      "Verfrist en egaliseert de huid",
+      "Stimuleert (baard)haargroei",
+      "Zichtbaar stralender resultaat",
+      "Geschikt bij onzuivere of gevoelige huid",
+      "Pijnloos en niet-invasief",
+    ],
     color: "oklch(0.78_0.06_15)",
   },
   {
