@@ -28,7 +28,7 @@ const skinProblems = [
   {
     title: "Acne & Onzuiverheden",
     description: "Acne is een van de meest voorkomende huidproblemen. Wij bieden effectieve behandelingen die de huid reinigen, kalmeren en de huidconditie zichtbaar verbeteren.",
-    symptoms: ["Mee-eters", "Puistjes", "Cysten", "Littekens"],
+    symptoms: ["Mee-eters", "Puistjes", "Milia (gerstekorrels)", "Cysten", "Littekens"],
     color: "oklch(0.78_0.06_15)",
   },
   {
