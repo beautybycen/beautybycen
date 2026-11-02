@@ -69,20 +69,20 @@ export default function OverMij() {
               <FadeUp delay={100}>
                 <div className="inline-flex items-center space-x-2 text-[oklch(0.55_0.04_50)] font-body text-sm uppercase tracking-widest mb-2">
                   <Award size={16} />
-                  <span>Gecertificeerd huidspecialist</span>
+                  <span>Gediplomeerd schoonheidsspecialist · Gecertificeerd in de donkere huid</span>
                 </div>
                 <h2 className="font-display text-4xl text-[oklch(0.22_0.04_50)] leading-tight mb-6">
                   Mijn passie voor huidverbetering
                 </h2>
                 <div className="space-y-6 font-body text-lg text-[oklch(0.45_0.03_50)] leading-relaxed">
                   <p>
-                    Welkom bij Beauty By Cen. Mijn naam is Cindy Nimmermeer en ik ben de drijvende kracht achter deze salon. Mijn reis in de wereld van uiterlijke verzorging begon vanuit een diepe passie voor het helpen van mensen om zich zelfverzekerd te voelen in hun eigen huid.
+                    Welkom bij Beauty By Cen. Mijn naam is Cindy Nimmermeer en ik ben de drijvende kracht achter deze salon. Als gediplomeerd schoonheidsspecialist en professioneel huidspecialist begon mijn reis in de wereld van uiterlijke verzorging vanuit een diepe passie voor het helpen van mensen om zich zelfverzekerd te voelen in hun eigen huid.
                   </p>
                   <p>
-                    Door de jaren heen heb ik mij gespecialiseerd in geavanceerde huidverbeteringstechnieken. Ik geloof niet in 'one size fits all' oplossingen, maar in een persoonlijke aanpak die gebaseerd is op wetenschap en precisie.
+                    Door de jaren heen heb ik mij gespecialiseerd in geavanceerde huidverbeteringstechnieken. Ik ben gecertificeerd in de behandeling van de donkere huid: een huidtype met prachtige eigenschappen, maar ook met unieke kenmerken die specifieke kennis, zorgvuldigheid en producten vereisen.
                   </p>
                   <p>
-                    De donkere huid heeft unieke kenmerken en vereist specifieke kennis en producten.
+                    Ik geloof niet in 'one size fits all' oplossingen, maar in een persoonlijke aanpak die gebaseerd is op wetenschap, precisie en veilige behandelingen afgestemd op uw individuele huid.
                   </p>
                 </div>
               </FadeUp>

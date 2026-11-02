@@ -139,8 +139,8 @@ export default function Home() {
               <em className="italic text-[oklch(0.78_0.06_15)]">helder</em>{" "}
               in uw schoonheid
             </h1>
-            <p className="font-body text-base text-white/75 leading-relaxed mb-10 max-w-md">
-              Professionele huidspecialist met geavanceerde technologie. Persoonlijke behandelingen afgestemd op uw unieke huid — inclusief donkere huidtypes.
+            <p className="font-body text-base text-white/75 leading-relaxed mb-10 max-w-lg">
+              Gediplomeerd schoonheidsspecialist en professioneel huidspecialist met geavanceerde technologie. Gecertificeerd in de donkere huid, met persoonlijke behandelingen afgestemd op uw unieke huid.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -385,7 +385,7 @@ export default function Home() {
                 <em className="italic text-[oklch(0.62_0.09_50)]">een gezonde huid</em>
               </h2>
               <p className="font-body text-base text-[oklch(0.45_0.04_50)] leading-relaxed mb-5">
-                Cindy Nimmermeer is een gedreven huidspecialist met een bijzondere expertise in donkere en gemengde huidtypes. Met geavanceerde technologie zoals de Observ 520x huidscan biedt zij behandelingen die verder gaan dan het oppervlak.
+                Cindy Nimmermeer is een gediplomeerd schoonheidsspecialist en professioneel huidspecialist met een gecertificeerde expertise in de donkere en gemengde huid. Met geavanceerde technologie zoals de Observ 520x huidscan biedt zij behandelingen die verder gaan dan het oppervlak.
               </p>
               <p className="font-body text-base text-[oklch(0.45_0.04_50)] leading-relaxed mb-8">
                 Elk behandelplan is uniek — afgestemd op uw huid, uw wensen en uw leven. Want schoonheid begint bij een gezonde huid.
