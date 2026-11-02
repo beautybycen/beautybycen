@@ -109,13 +109,44 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[oklch(0.30_0.04_50)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-body text-xs text-[oklch(0.52_0.025_75)]">
-            © {new Date().getFullYear()} Beauty By Cen. Alle rechten voorbehouden.
-          </p>
-          <p className="font-body text-xs text-[oklch(0.45_0.025_75)]">
-            BTW-ID: NL005195754B47
-          </p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p className="font-body text-xs text-[oklch(0.52_0.025_75)]">
+              © {new Date().getFullYear()} Beauty By Cen. Alle rechten voorbehouden.
+            </p>
+            <span className="hidden sm:inline text-[oklch(0.35_0.04_50)]">•</span>
+            <p className="font-body text-xs text-[oklch(0.45_0.025_75)]">
+              BTW-ID: NL005195754B47
+            </p>
+          </div>
+
+          {/* Landelijke erkenning — Wellness Academie Kwaliteitslabel */}
+          <div>
+            <a
+              href="https://www.wellnessacademie.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Wellness Academie - Erkende opleidingen"
+              className="inline-flex items-center gap-3 bg-white/95 hover:bg-white text-[oklch(0.22_0.04_50)] px-3.5 py-2 rounded-xl shadow-xs border border-white/20 transition-all duration-300 hover:scale-[1.02] group"
+            >
+              <img
+                src="https://static.wellnessacademie.com/images/kwaliteitslabel.png"
+                alt="Wellness Academie - Erkende opleidingen"
+                className="h-10 w-10 object-contain shrink-0"
+              />
+              <div className="flex flex-col text-left">
+                <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.55_0.09_50)]">
+                  Landelijke Erkenning
+                </span>
+                <span className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] leading-tight">
+                  Wellness Academie
+                </span>
+                <span className="font-body text-[10px] text-[oklch(0.45_0.04_50)]">
+                  Erkend Kwaliteitslabel
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
