@@ -166,6 +166,7 @@ const jellyMasks = [
 
 export default function Behandelingen() {
   const [jellyOpen, setJellyOpen] = useState(false);
+  const [acneOpen, setAcneOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -210,8 +211,10 @@ export default function Behandelingen() {
                     {category.items.map((item, ii) => (
                       <div
                         key={ii}
-                        className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-shadow duration-300 ${
-                          item.name === "Jelly Masker" && jellyOpen ? "ring-2 ring-[oklch(0.62_0.09_50)]/30" : ""
+                        className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
+                          (item.name === "Jelly Masker" && jellyOpen) || (item.name === "Acne Behandeling" && acneOpen)
+                            ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
+                            : ""
                         }`}
                       >
                         <div className="flex items-start justify-between mb-3">
@@ -284,6 +287,78 @@ export default function Behandelingen() {
                                       </div>
                                     </div>
                                   ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Acne Behandeling */}
+                        {item.name === "Acne Behandeling" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setAcneOpen(!acneOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={acneOpen}
+                            >
+                              <Sparkles size={13} className={acneOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{acneOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${acneOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Acne Behandeling */}
+                            {acneOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Informatie & Aanpak
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Heb je Acne of pijnlijke ontstekingen?
+                                  </h4>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  Tijdens een acnébehandeling reinigen we de huid grondig om overtollig talg, dode huidcellen en onzuiverheden te verwijderen. Ik werk met milde, maar effectieve producten die ontstekingen verminderen en de huid tot rust brengen.
+                                </p>
+
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    De behandeling kan bestaan uit:
+                                  </p>
+                                  <ul className="space-y-1.5 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Dieptereiniging van de poriën</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Een peeling of lysing</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Verwijderen van onzuiverheden</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Kalmerend masker</span>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3.5 border border-[oklch(0.90_0.02_75)] space-y-1">
+                                  <p className="font-body text-xs font-600 text-[oklch(0.28_0.04_50)]">
+                                    Inzet van geavanceerde apparatuur:
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
+                                    Het kan zijn dat ik de <span className="font-600 text-[oklch(0.22_0.04_50)]">Coldplasma</span> gebruik om ontstekingen te laten zakken, of de <span className="font-600 text-[oklch(0.22_0.04_50)]">Skin Active</span>.
+                                  </p>
+                                </div>
+
+                                <div className="pt-2 border-t border-[oklch(0.92_0.015_75)] flex items-start gap-1.5 text-xs font-body text-[oklch(0.50_0.04_50)]">
+                                  <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                  <span>Advies voor de juiste huidverzorging en meer…</span>
                                 </div>
                               </div>
                             )}
