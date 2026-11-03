@@ -47,6 +47,7 @@ const treatments = [
     category: "Geavanceerde Technologie",
     items: [
       { name: "Observ 520x Huidscan", desc: "Geavanceerde analyse van uw huid met de nieuwste scantechnologie.", duration: "30 min" },
+      { name: "Hydrodermabrasie", desc: "Op basis van de huidscan die we samen hebben uitgevoerd, weten we nu precies wat uw huid op dit moment nodig heeft. We stellen daarom een gepersonaliseerde gezichtsbehandeling samen met behulp van ons geavanceerde hydrodermabrasie-apparaat.", duration: "Op maat" },
       { name: "Skin active / microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageenproductie.", duration: "90 min" },
       { name: "Coldplasma-behandeling", desc: "Deze behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
     ],
@@ -172,6 +173,7 @@ export default function Behandelingen() {
   const [observOpen, setObservOpen] = useState(false);
   const [skinActiveOpen, setSkinActiveOpen] = useState(false);
   const [coldplasmaOpen, setColdplasmaOpen] = useState(false);
+  const [hydrodermabrasieOpen, setHydrodermabrasieOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -223,7 +225,8 @@ export default function Behandelingen() {
                           (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
                           (item.name.includes("Observ") && observOpen) ||
                           (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
-                          (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen)
+                          (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen) ||
+                          (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -807,6 +810,93 @@ export default function Behandelingen() {
                                   <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body font-600 text-[oklch(0.35_0.04_50)] text-center">
                                     Wilt u een frisse, egale en gezonde huid? Kies dan voor een Coldplasma-behandeling en ervaar het verschil al na één sessie.
                                   </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Hydrodermabrasie */}
+                        {item.name.toLowerCase().includes("hydrodermabrasie") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setHydrodermabrasieOpen(!hydrodermabrasieOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={hydrodermabrasieOpen}
+                            >
+                              <Sparkles size={13} className={hydrodermabrasieOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{hydrodermabrasieOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${hydrodermabrasieOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Hydrodermabrasie */}
+                            {hydrodermabrasieOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Stappen &amp; Opzetstukken
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Hydrodermabrasie Behandeling
+                                  </h4>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  De behandeling bevat verschillende stappen en gespecialiseerde opzetstukken:
+                                </p>
+
+                                {/* Opzetstukken lijst */}
+                                <div className="space-y-2">
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] flex items-start gap-2.5">
+                                    <span className="text-base shrink-0">❄️</span>
+                                    <div>
+                                      <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">Koude kop</h5>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Om de huid te kalmeren en te verkoelen.</p>
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] flex items-start gap-2.5">
+                                    <span className="text-base shrink-0">✨</span>
+                                    <div>
+                                      <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">Schraper</h5>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Om dode huidcellen en onzuiverheden effectief te verwijderen.</p>
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] flex items-start gap-2.5">
+                                    <span className="text-base shrink-0">⚡</span>
+                                    <div>
+                                      <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">RF-kop</h5>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Radiofrequentie voor intensieve huidversteviging en stimulatie.</p>
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] flex items-start gap-2.5">
+                                    <span className="text-base shrink-0">🔥</span>
+                                    <div>
+                                      <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">Warme kop</h5>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Om de doorbloeding optimaal te stimuleren.</p>
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] flex items-start gap-2.5">
+                                    <span className="text-base shrink-0">💧</span>
+                                    <div>
+                                      <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">Zuigkop</h5>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Reinigt de poriën diep en verwijdert dieperliggend talg.</p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Afsluiting SHOOTER */}
+                                <div className="bg-[oklch(0.96_0.025_50)] rounded-xl p-3.5 border border-[oklch(0.85_0.05_50)] space-y-1">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Afsluiting met de SHOOTER
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Als afsluiting gebruiken we de <span className="font-700 text-[oklch(0.22_0.04_50)]">SHOOTER</span>, die met gecontroleerde luchtdruk actieve serums diep in de huid insluist voor een intens gevoede, frisse en stralende huid die perfect aansluit op uw persoonlijke huidbehoeften.
+                                  </p>
                                 </div>
                               </div>
                             )}
