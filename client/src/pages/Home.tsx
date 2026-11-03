@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { Star, ChevronRight, Sparkles, Scan, Heart, Users } from "lucide-react";
 
 const IMAGES = {
-  heroTreatment: "/images/dark_skin_treatment.jpg",
+  heroTreatment: "/images/salon-mirror.jpg",
   heroPortrait: "/images/cindy-observ-portrait.jpg",
   salonInterior: "/images/salon-interior.webp",
   skinCloseup: "/images/treatment1.jpg",
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={IMAGES.heroTreatment}
-            alt="Beauty treatment"
+            alt="Beauty By Cen salon"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.04_50)]/85 via-[oklch(0.22_0.04_50)]/50 to-transparent" />
