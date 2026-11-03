@@ -12,7 +12,7 @@ import { Star, ChevronRight, Sparkles, Scan, Heart, Users } from "lucide-react";
 const IMAGES = {
   heroTreatment: "/images/salon-mirror.jpg",
   heroPortrait: "/images/cindy-observ-portrait.jpg",
-  salonInterior: "/images/salon-interior.webp",
+  salonInterior: "/images/klapp-serums.jpg",
   skinCloseup: "/images/treatment1.jpg",
   treatmentHands: "/images/treatment3.jpg",
   salonRoom: "/images/treatment-room.webp",
@@ -287,7 +287,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={IMAGES.salonInterior}
-            alt="Beauty By Cen salon"
+            alt="Beauty By Cen behandelingen en apparatuur"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[oklch(0.22_0.04_50)]/70" />
