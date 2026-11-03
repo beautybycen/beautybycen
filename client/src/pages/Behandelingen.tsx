@@ -171,6 +171,7 @@ export default function Behandelingen() {
   const [diepeReinigingOpen, setDiepeReinigingOpen] = useState(false);
   const [observOpen, setObservOpen] = useState(false);
   const [skinActiveOpen, setSkinActiveOpen] = useState(false);
+  const [coldplasmaOpen, setColdplasmaOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -221,7 +222,8 @@ export default function Behandelingen() {
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
                           (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
                           (item.name.includes("Observ") && observOpen) ||
-                          (item.name.toLowerCase().includes("skin active") && skinActiveOpen)
+                          (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
+                          (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -723,6 +725,87 @@ export default function Behandelingen() {
                                         ○ {indicator}
                                       </span>
                                     ))}
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Coldplasma */}
+                        {item.name.toLowerCase().includes("coldplasma") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setColdplasmaOpen(!coldplasmaOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={coldplasmaOpen}
+                            >
+                              <Sparkles size={13} className={coldplasmaOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{coldplasmaOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${coldplasmaOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Coldplasma */}
+                            {coldplasmaOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Geavanceerde Technologie
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Coldplasma: Revolutionaire huidvernieuwing zonder naalden of pijn
+                                  </h4>
+                                </div>
+
+                                <div className="space-y-2 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  <p>
+                                    Ervaar de kracht van Coldplasma – dé nieuwste technologie op het gebied van huidverzorging en huidverbetering. Deze behandeling werkt met koud plasma (een geïoniseerd gas) dat op een veilige en pijnloze manier de huid activeert en vernieuwt.
+                                  </p>
+                                  <p>
+                                    Coldplasma opent tijdelijk de huidbarrière, waardoor actieve werkstoffen dieper kunnen doordringen én tegelijkertijd bacteriën, virussen en schimmels worden afgebroken. Het resultaat? Een zuivere, stralende en gezonde huid van binnenuit.
+                                  </p>
+                                </div>
+
+                                {/* Wat doet Coldplasma voor uw huid? */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Wat doet Coldplasma voor uw huid?
+                                  </p>
+                                  <ul className="space-y-1.5 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Haalt littekens weg</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Reinigt en zuivert de huid tot diep in de poriën</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Vermindert acne en onzuiverheden</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Stimuleert celvernieuwing en collageenaanmaak</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Kalmeert roodheid en ontstekingen</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Verhoogt de opname van werkstoffen</span>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                <div className="space-y-2">
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    De behandeling is volledig pijnloos, geschikt voor elk huidtype en ideaal bij huidproblemen zoals acne, rosacea, pigmentvlekken of een doffe huid.
+                                  </p>
+                                  <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body font-600 text-[oklch(0.35_0.04_50)] text-center">
+                                    Wilt u een frisse, egale en gezonde huid? Kies dan voor een Coldplasma-behandeling en ervaar het verschil al na één sessie.
                                   </div>
                                 </div>
                               </div>
