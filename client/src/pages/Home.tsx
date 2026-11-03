@@ -13,7 +13,7 @@ const IMAGES = {
   heroTreatment: "/images/salon-mirror.jpg",
   heroPortrait: "/images/cindy-observ-portrait.jpg",
   salonInterior: "/images/klapp-serums.jpg",
-  skinCloseup: "/images/treatment1.jpg",
+  skinCloseup: "/images/facial-mask-treatment.jpg",
   treatmentHands: "/images/treatment3.jpg",
   salonRoom: "/images/treatment-room.webp",
 };
