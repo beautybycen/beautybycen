@@ -169,6 +169,7 @@ export default function Behandelingen() {
   const [acneOpen, setAcneOpen] = useState(false);
   const [peelOffOpen, setPeelOffOpen] = useState(false);
   const [diepeReinigingOpen, setDiepeReinigingOpen] = useState(false);
+  const [observOpen, setObservOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -217,7 +218,8 @@ export default function Behandelingen() {
                           (item.name === "Jelly Masker" && jellyOpen) ||
                           (item.name === "Acne Behandeling" && acneOpen) ||
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
-                          (item.name === "Diepe Reiniging" && diepeReinigingOpen)
+                          (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
+                          (item.name.includes("Observ") && observOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -552,6 +554,68 @@ export default function Behandelingen() {
                                 <div className="pt-2 border-t border-[oklch(0.92_0.015_75)] flex items-start gap-1.5 text-xs font-body text-[oklch(0.50_0.04_50)]">
                                   <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
                                   <span>Advies voor de juiste huidverzorging en meer…</span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Observ 520x Huidscan */}
+                        {item.name.includes("Observ") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setObservOpen(!observOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={observOpen}
+                            >
+                              <Sparkles size={13} className={observOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{observOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${observOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Observ Huidscan */}
+                            {observOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Geavanceerde Analyse
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Huidanalyse met het OBSERVE-systeem
+                                  </h4>
+                                </div>
+
+                                {/* Video preview */}
+                                <div className="rounded-xl overflow-hidden border border-[oklch(0.92_0.018_75)] bg-black/5 flex justify-center">
+                                  <video
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    className="w-full max-h-[380px] object-contain rounded-xl bg-black"
+                                    src="/videos/observ-huidscan.mp4"
+                                  >
+                                    Uw browser ondersteunt deze video helaas niet.
+                                  </video>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  De huidanalyse met het OBSERVE-systeem geeft een uniek en diepgaand inzicht in de conditie van uw huid.
+                                </p>
+
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    Met behulp van verschillende lichttechnieken maken we onzichtbare huidproblemen zichtbaar, zoals pigmentvlekken, verstopte poriën, roodheid, beginnende rimpels en vochttekort.
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    Deze analyse helpt ons om heel gericht te adviseren en een behandeling samen te stellen die écht bij uw huidtype en huidbehoefte past.
+                                  </p>
+                                </div>
+
+                                <div className="bg-[oklch(0.96_0.025_50)] rounded-xl p-3.5 border border-[oklch(0.85_0.05_50)]">
+                                  <p className="font-body text-xs font-600 text-[oklch(0.25_0.05_50)] leading-relaxed">
+                                    De huidscan kost normaal €30, maar is helemaal <span className="underline decoration-[oklch(0.62_0.09_50)] font-700">gratis bij het afnemen van een behandeling</span> – zo weet u zeker dat we samen de juiste start maken voor uw huidverbetering.
+                                  </p>
                                 </div>
                               </div>
                             )}
