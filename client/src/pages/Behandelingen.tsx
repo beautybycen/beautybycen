@@ -174,6 +174,7 @@ export default function Behandelingen() {
   const [skinActiveOpen, setSkinActiveOpen] = useState(false);
   const [coldplasmaOpen, setColdplasmaOpen] = useState(false);
   const [hydrodermabrasieOpen, setHydrodermabrasieOpen] = useState(false);
+  const [hydraterendOpen, setHydraterendOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -226,7 +227,8 @@ export default function Behandelingen() {
                           (item.name.includes("Observ") && observOpen) ||
                           (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
                           (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen) ||
-                          (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen)
+                          (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen) ||
+                          (item.name.toLowerCase().includes("hydraterende") && hydraterendOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -327,6 +329,108 @@ export default function Behandelingen() {
                                     </h5>
                                     <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
                                       De behandeling wordt altijd afgesloten met zonnebrand om de huid te beschermen tegen UV-straling.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Hydraterende Behandeling */}
+                        {item.name.toLowerCase().includes("hydraterende") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setHydraterendOpen(!hydraterendOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={hydraterendOpen}
+                            >
+                              <Sparkles size={13} className={hydraterendOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{hydraterendOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${hydraterendOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Hydraterende Behandeling */}
+                            {hydraterendOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Behandelstappen
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Hydraterende Behandeling
+                                  </h4>
+                                </div>
+
+                                <div className="space-y-2">
+                                  {/* Oppervlaktereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Oppervlaktereiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      De huid reinigen met een reinigingsmelk of reinigingsgel om make-up, talg en vuil te verwijderen.
+                                    </p>
+                                  </div>
+
+                                  {/* Dieptereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Dieptereiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Dode huidcellen verwijderen met een milde peeling of exfoliant, zodat de huid gladder wordt.
+                                    </p>
+                                  </div>
+
+                                  {/* Verwijderen van resten */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Verwijderen van resten
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      De peeling verwijderen met vochtige kompressen. Eventueel een warme kompres gebruiken als de huid dit verdraagt.
+                                    </p>
+                                  </div>
+
+                                  {/* Hydraterend serum aanbrengen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Hydraterend serum aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een serum met bijvoorbeeld hyaluronzuur, glycerine of panthenol aanbrengen om vocht aan te trekken en vast te houden.
+                                    </p>
+                                  </div>
+
+                                  {/* Hydraterend masker */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Hydraterend masker
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een vochtinbrengend masker aanbrengen om de huid intensief te verzorgen.
+                                    </p>
+                                  </div>
+
+                                  {/* Dagcrème aanbrengen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Dagcrème aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een verzorgende crème aanbrengen die helpt het vocht in de huid vast te houden.
+                                    </p>
+                                  </div>
+
+                                  {/* SPF aanbrengen */}
+                                  <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      SPF aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
+                                      Afsluiten met een zonnebescherming van minimaal SPF 30 overdag.
                                     </p>
                                   </div>
                                 </div>
