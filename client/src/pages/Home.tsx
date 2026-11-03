@@ -361,19 +361,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image grid */}
-            <FadeUp className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg h-full min-h-[320px]">
+            <FadeUp className="grid grid-cols-2 gap-4 items-center">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
                 <img src={IMAGES.treatmentHands} alt="Behandeling" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col gap-4">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <img src={IMAGES.skinCloseup} alt="Gezichtsbehandeling met masker" className="w-full h-full object-cover" />
                 </div>
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={IMAGES.salonRoom}
                     alt="Observ 520x huidanalyse consult"
-                    className="w-full h-full object-cover object-[center_75%]"
+                    className="w-full h-full object-cover object-[center_72%]"
                   />
                 </div>
               </div>
