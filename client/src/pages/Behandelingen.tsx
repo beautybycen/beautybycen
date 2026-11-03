@@ -167,6 +167,7 @@ const jellyMasks = [
 export default function Behandelingen() {
   const [jellyOpen, setJellyOpen] = useState(false);
   const [acneOpen, setAcneOpen] = useState(false);
+  const [peelOffOpen, setPeelOffOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -212,7 +213,9 @@ export default function Behandelingen() {
                       <div
                         key={ii}
                         className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
-                          (item.name === "Jelly Masker" && jellyOpen) || (item.name === "Acne Behandeling" && acneOpen)
+                          (item.name === "Jelly Masker" && jellyOpen) ||
+                          (item.name === "Acne Behandeling" && acneOpen) ||
+                          (item.name === "Peel-off Masker" && peelOffOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -287,6 +290,102 @@ export default function Behandelingen() {
                                       </div>
                                     </div>
                                   ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Peel-off Masker */}
+                        {item.name === "Peel-off Masker" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setPeelOffOpen(!peelOffOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={peelOffOpen}
+                            >
+                              <Sparkles size={13} className={peelOffOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{peelOffOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${peelOffOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Peel-off Masks */}
+                            {peelOffOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Informatie & Varianten
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Peel-off Masker Behandelingen
+                                  </h4>
+                                </div>
+
+                                {/* Peel-off Mask – Calm */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <div className="flex items-center justify-between">
+                                    <h5 className="font-display text-sm font-600 text-[oklch(0.22_0.04_50)]">
+                                      Peel-off Mask – Calm
+                                    </h5>
+                                    <span className="font-body text-[10px] font-600 text-[oklch(0.62_0.09_50)] bg-[oklch(0.92_0.022_75)] px-2 py-0.5 rounded-full">
+                                      Gevoelige huid
+                                    </span>
+                                  </div>
+                                  <p className="font-body text-xs font-500 text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Een kalmerende en herstellende behandeling voor de gevoelige of gestreste huid.
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    Zorgt voor directe hydratatie en voeding, vermindert roodheid, verkleuringen en ontstekingen en versterkt de bloedvaatjes.
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    De huid wordt gerevitaliseerd, gere-mineraliseerd en beschermd tegen vrije radicalen, terwijl het herstel, collageen- en elastine-aanmaak wordt gestimuleerd.
+                                  </p>
+                                  <div className="pt-1.5 border-t border-[oklch(0.92_0.015_75)] font-body text-[11px] font-600 text-[oklch(0.55_0.06_45)]">
+                                    Resultaat: een frisse, egale en zichtbaar jongere huid (skin detox).
+                                  </div>
+                                </div>
+
+                                {/* Peel-off Mask – Lift */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <div className="flex items-center justify-between">
+                                    <h5 className="font-display text-sm font-600 text-[oklch(0.22_0.04_50)]">
+                                      Peel-off Mask – Lift
+                                    </h5>
+                                    <span className="font-body text-[10px] font-600 text-[oklch(0.62_0.09_50)] bg-[oklch(0.92_0.022_75)] px-2 py-0.5 rounded-full">
+                                      Liftend effect
+                                    </span>
+                                  </div>
+                                  <p className="font-body text-xs font-500 text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Een intensieve behandeling met direct liftend effect.
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    Hydrateert en voedt de huid diep, ondersteunt een sterke antioxidantenbescherming en stimuleert de collageen- en elastinesynthese.
+                                  </p>
+                                  <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                    De huid wordt gerevitaliseerd en gere-mineraliseerd, de teint wordt verhelderd en geëgaliseerd en de huid oogt steviger, frisser en jeugdiger.
+                                  </p>
+                                </div>
+
+                                {/* Resultaat */}
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3.5 border border-[oklch(0.90_0.02_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Resultaat:
+                                  </p>
+                                  <ul className="space-y-1.5 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Diep gereinigde, gevoede en beschermde huid</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Gladdere huidstructuur</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Frisse, gezonde uitstraling</span>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             )}
