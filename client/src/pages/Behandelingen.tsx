@@ -168,6 +168,7 @@ export default function Behandelingen() {
   const [jellyOpen, setJellyOpen] = useState(false);
   const [acneOpen, setAcneOpen] = useState(false);
   const [peelOffOpen, setPeelOffOpen] = useState(false);
+  const [diepeReinigingOpen, setDiepeReinigingOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -215,7 +216,8 @@ export default function Behandelingen() {
                         className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
                           (item.name === "Jelly Masker" && jellyOpen) ||
                           (item.name === "Acne Behandeling" && acneOpen) ||
-                          (item.name === "Peel-off Masker" && peelOffOpen)
+                          (item.name === "Peel-off Masker" && peelOffOpen) ||
+                          (item.name === "Diepe Reiniging" && diepeReinigingOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -231,6 +233,98 @@ export default function Behandelingen() {
                         <p className="font-body text-sm text-[oklch(0.52_0.04_50)] leading-relaxed">
                           {item.desc}
                         </p>
+
+                        {/* Uitleg button for Diepe Reiniging */}
+                        {item.name === "Diepe Reiniging" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setDiepeReinigingOpen(!diepeReinigingOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={diepeReinigingOpen}
+                            >
+                              <Sparkles size={13} className={diepeReinigingOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{diepeReinigingOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${diepeReinigingOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Diepe Reiniging */}
+                            {diepeReinigingOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Behandelstappen
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Inhoud van de behandeling
+                                  </h4>
+                                </div>
+
+                                <div className="space-y-2">
+                                  {/* Oppervlakte reinigen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Oppervlakte reinigen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Verwijdert make-up, talg en oppervlakkige onzuiverheden.
+                                    </p>
+                                  </div>
+
+                                  {/* Diepte Reiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Diepte Reiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Reinigt de poriën intensief en zuivert de huid dieper.
+                                    </p>
+                                  </div>
+
+                                  {/* Peeling of lysing & Stomen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Peeling of lysing &amp; stomen met de vapozone
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Verwijdert dode huidcellen en laat de huid fris en glad aanvoelen.
+                                    </p>
+                                  </div>
+
+                                  {/* Vitamine serum */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Vitamine serum
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een voedend en herstellend serum dat de huid een gezonde glow geeft.
+                                    </p>
+                                  </div>
+
+                                  {/* Voedende crème */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Voedende crème (op huidbehoefte)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een verzorgende crème die wordt afgestemd op wat de huid op dat moment nodig heeft (bijv. hydratatie, kalmering of herstel).
+                                    </p>
+                                  </div>
+
+                                  {/* SPF */}
+                                  <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      SPF (zonbescherming)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
+                                      De behandeling wordt altijd afgesloten met zonnebrand om de huid te beschermen tegen UV-straling.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
 
                         {/* Uitleg button for Jelly Masker */}
                         {item.name === "Jelly Masker" && (
