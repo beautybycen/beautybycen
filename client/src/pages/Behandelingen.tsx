@@ -170,6 +170,7 @@ export default function Behandelingen() {
   const [peelOffOpen, setPeelOffOpen] = useState(false);
   const [diepeReinigingOpen, setDiepeReinigingOpen] = useState(false);
   const [observOpen, setObservOpen] = useState(false);
+  const [skinActiveOpen, setSkinActiveOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -219,7 +220,8 @@ export default function Behandelingen() {
                           (item.name === "Acne Behandeling" && acneOpen) ||
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
                           (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
-                          (item.name.includes("Observ") && observOpen)
+                          (item.name.includes("Observ") && observOpen) ||
+                          (item.name.toLowerCase().includes("skin active") && skinActiveOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -616,6 +618,112 @@ export default function Behandelingen() {
                                   <p className="font-body text-xs font-600 text-[oklch(0.25_0.05_50)] leading-relaxed">
                                     De huidscan kost normaal €30, maar is helemaal <span className="underline decoration-[oklch(0.62_0.09_50)] font-700">gratis bij het afnemen van een behandeling</span> – zo weet u zeker dat we samen de juiste start maken voor uw huidverbetering.
                                   </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Skin Active */}
+                        {item.name.toLowerCase().includes("skin active") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setSkinActiveOpen(!skinActiveOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={skinActiveOpen}
+                            >
+                              <Sparkles size={13} className={skinActiveOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{skinActiveOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${skinActiveOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Skin Active */}
+                            {skinActiveOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Microneedling zonder naalden
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    SkinActive Behandeling
+                                  </h4>
+                                </div>
+
+                                <div className="space-y-2 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  <p>
+                                    <strong className="text-[oklch(0.22_0.04_50)]">SkinActive</strong> is een geavanceerde, pijnloze methode waarmee we werkstoffen tot in de diepere huidlagen kunnen insluizen.
+                                  </p>
+                                  <p>
+                                    Deze innovatieve techniek maakt het mogelijk om actieve ingrediënten direct in de cellen van de huid te brengen, zónder naalden of beschadiging van de huidbarrière. Door een korte en veilige elektrische puls ontstaan tijdelijk microscopisch kleine openingen in de celwand, waardoor de huid tijdelijk extreem doordringbaar wordt.
+                                  </p>
+                                  <p>
+                                    Dankzij deze methode kunnen voedende stoffen de huid binnendringen precies waar ze het meeste effect hebben. Hierdoor worden huidveroudering tegengegaan, rimpels en fijne lijntjes verminderd en voelt de huid direct voller, gladder en stralender aan.
+                                  </p>
+                                  <p>
+                                    De behandeling is volledig pijnloos, veilig en effectief. De werkstoffen worden optimaal opgenomen en zorgen voor een intensieve huidverbetering van binnenuit.
+                                  </p>
+                                </div>
+
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body font-600 text-[oklch(0.35_0.04_50)] text-center">
+                                  Gun uw huid een boost van binnenuit. Boek vandaag nog jouw SkinActive-behandeling en ervaar het verschil.
+                                </div>
+
+                                {/* Voordelen */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Voordelen:
+                                  </p>
+                                  <ul className="space-y-1.5 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Geen injecties</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Direct zichtbaar resultaat</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Veilig en pijnloos</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Geen blauwe plekken</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Te combineren met al onze andere behandelingen</span>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                {/* Inzetbaar bij */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2.5">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Inzetbaar bij:
+                                  </p>
+                                  <div className="flex flex-wrap gap-1.5">
+                                    {[
+                                      "Huidveroudering",
+                                      "Dunne huid",
+                                      "Wallen",
+                                      "Rokershuid",
+                                      "Couperose",
+                                      "Plaatselijke vetophopingen",
+                                      "Cellulite",
+                                      "Striae",
+                                      "Huidverslapping",
+                                      "Donkere vlekken",
+                                    ].map((indicator, idx) => (
+                                      <span
+                                        key={idx}
+                                        className="font-body text-[11px] px-2.5 py-1 rounded-full bg-white text-[oklch(0.38_0.04_50)] border border-[oklch(0.90_0.015_75)]"
+                                      >
+                                        ○ {indicator}
+                                      </span>
+                                    ))}
+                                  </div>
                                 </div>
                               </div>
                             )}
