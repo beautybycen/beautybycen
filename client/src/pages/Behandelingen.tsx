@@ -166,6 +166,7 @@ const jellyMasks = [
 ];
 
 export default function Behandelingen() {
+  const [basisOpen, setBasisOpen] = useState(false);
   const [jellyOpen, setJellyOpen] = useState(false);
   const [acneOpen, setAcneOpen] = useState(false);
   const [peelOffOpen, setPeelOffOpen] = useState(false);
@@ -220,6 +221,7 @@ export default function Behandelingen() {
                       <div
                         key={ii}
                         className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
+                          (item.name === "Basisbehandeling" && basisOpen) ||
                           (item.name === "Jelly Masker" && jellyOpen) ||
                           (item.name === "Acne Behandeling" && acneOpen) ||
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
@@ -244,6 +246,140 @@ export default function Behandelingen() {
                         <p className="font-body text-sm text-[oklch(0.52_0.04_50)] leading-relaxed">
                           {item.desc}
                         </p>
+
+                        {/* Uitleg button for Basisbehandeling */}
+                        {item.name === "Basisbehandeling" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setBasisOpen(!basisOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={basisOpen}
+                            >
+                              <Sparkles size={13} className={basisOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{basisOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${basisOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Basisbehandeling */}
+                            {basisOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Reiniging &amp; Verzorging
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Basisbehandeling (60 min)
+                                  </h4>
+                                </div>
+
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                  <strong className="text-[oklch(0.22_0.04_50)]">Doel van de basisbehandeling:</strong> de huid op een eenvoudige manier reinigen, verzorgen en in goede conditie houden.
+                                </div>
+
+                                {/* Behandelstappen */}
+                                <div className="space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Behandelstappen:
+                                  </p>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      1. Oppervlaktereiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Het verwijderen van make-up, vuil en overtollig talg met een geschikte reinigingsmelk of cleanser.
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      2. Dieptereiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      De huid grondiger reinigen met bijvoorbeeld een lichte peeling of scrub om dode huidcellen te verwijderen.
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      3. Onzuiverheden verwijderen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Mee-eters en verstopte poriën voorzichtig verwijderen indien nodig en mogelijk.
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      4. Masker aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een gezichtsmasker aanbrengen dat is afgestemd op de huidbehoefte, bijvoorbeeld een hydraterend, kalmerend of zuiverend masker.
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      5. Dagcrème aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een geschikte dagcrème aanbrengen om de huid te hydrateren en te verzorgen.
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      6. SPF aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      De behandeling afsluiten met zonnebescherming om de huid te beschermen tegen schadelijke UV-straling.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                {/* Resultaat */}
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Resultaat van de behandeling:
+                                  </p>
+                                  <ul className="space-y-1 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Een schone en frisse huid</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Minder oppervlakkige onzuiverheden</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Een zachtere en soepelere huid</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Betere hydratatie</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span>Een ontspannen en verzorgd gevoel</span>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                {/* Verschil basis vs uitgebreid */}
+                                <div className="bg-[oklch(0.96_0.025_50)] rounded-xl p-3.5 border border-[oklch(0.85_0.05_50)] space-y-1.5">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Verschil tussen basis en uitgebreid:
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Bij een basisbehandeling ligt de nadruk op het reinigen, verzorgen en hydrateren van de huid. Bij een uitgebreide gezichtsbehandeling kunnen aanvullende technieken worden toegepast, zoals geavanceerde apparatuur, intensieve peelings, speciale huidverbeterende behandelingen en 2 maskers.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
 
                         {/* Uitleg button for Diepe Reiniging */}
                         {item.name === "Diepe Reiniging" && (
