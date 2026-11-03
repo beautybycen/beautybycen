@@ -15,7 +15,7 @@ const IMAGES = {
   salonInterior: "/images/klapp-serums.jpg",
   skinCloseup: "/images/facial-mask-treatment.jpg",
   treatmentHands: "/images/treatment3.jpg",
-  salonRoom: "/images/treatment-room.webp",
+  salonRoom: "/images/observ-consultation-client.jpg",
 };
 
 const services = [
@@ -370,7 +370,7 @@ export default function Home() {
                   <img src={IMAGES.skinCloseup} alt="Huid close-up" className="w-full h-full object-cover" />
                 </div>
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                  <img src={IMAGES.salonRoom} alt="Salon" className="w-full h-full object-cover" />
+                  <img src={IMAGES.salonRoom} alt="Observ 520x huidanalyse consult" className="w-full h-full object-cover object-top" />
                 </div>
               </div>
             </FadeUp>
