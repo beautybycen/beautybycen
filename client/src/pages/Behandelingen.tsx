@@ -628,6 +628,16 @@ export default function Behandelingen() {
                                     Een anti-aging behandeling is niet hetzelfde als een hydraterende behandeling. Bij anti-aging ligt de nadruk meer op huidveroudering, elasticiteit, fijne lijntjes en huidstructuur.
                                   </p>
                                 </div>
+
+                                {/* Meerdere behandelopties & SkinActive */}
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3.5 border border-[oklch(0.90_0.02_75)] space-y-1.5">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Meerdere behandelopties mogelijk:
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Afhankelijk van het intakegesprek is het ook mogelijk om anti-aging gericht te behandelen met <strong className="text-[oklch(0.22_0.04_50)]">SkinActive</strong> (zie uitleg bij <em>Skin active</em> onder Geavanceerde Technologie). We laten u tijdens het consult graag zien welke optie het beste aansluit op uw huid en wensen.
+                                  </p>
+                                </div>
                               </div>
                             )}
                           </div>
