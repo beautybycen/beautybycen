@@ -178,6 +178,7 @@ export default function Behandelingen() {
   const [hydrodermabrasieOpen, setHydrodermabrasieOpen] = useState(false);
   const [hydraterendOpen, setHydraterendOpen] = useState(false);
   const [pigmentOpen, setPigmentOpen] = useState(false);
+  const [rosaceaOpen, setRosaceaOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -234,7 +235,8 @@ export default function Behandelingen() {
                           (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen) ||
                           (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen) ||
                           (item.name.toLowerCase().includes("hydraterende") && hydraterendOpen) ||
-                          (item.name === "Pigmentatie Behandeling" && pigmentOpen)
+                          (item.name === "Pigmentatie Behandeling" && pigmentOpen) ||
+                          (item.name === "Rosacea Behandeling" && rosaceaOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -1141,6 +1143,157 @@ export default function Behandelingen() {
                                   </h5>
                                   <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
                                     Er zijn meerdere behandelopties mogelijk afhankelijk van wat er is besproken bij het intakegesprek en de huidanalyse. Zo is het ook mogelijk om pigmentatie effectief te behandelen met <strong className="text-[oklch(0.22_0.04_50)]">Skin Active</strong> (zie uitleg bij <em>Skin active</em> onder Geavanceerde Technologie). We laten u tijdens het consult graag zien welke optie het beste aansluit op uw huid en wensen.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Rosacea Behandeling */}
+                        {item.name === "Rosacea Behandeling" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setRosaceaOpen(!rosaceaOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={rosaceaOpen}
+                            >
+                              <Sparkles size={13} className={rosaceaOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{rosaceaOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${rosaceaOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Rosacea Behandeling */}
+                            {rosaceaOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Kalmering &amp; Roodheid Verminderen
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Rosacea Behandeling (60 min)
+                                  </h4>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  Een rosacea-behandeling is gericht op het kalmeren van de gevoelige huid, verminderen van roodheid, ondersteunen van de huidbarrière en verminderen van irritatie.
+                                </p>
+
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                  Bij rosacea is de huid vaak gevoelig, rood en snel geïrriteerd. Soms zijn er ook kleine rode bultjes, vaatjes (couperose) en ontstekingen zichtbaar. We behandelen de huid uiterst zacht en vermijden prikkels zoals warmte of schurende scrubs.
+                                </div>
+
+                                {/* Behandelstappen */}
+                                <div className="space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Behandelstappen:
+                                  </p>
+
+                                  {/* Huidanalyse en intake */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Huidanalyse en intake
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Grondige inspectie van de huidreactiviteit, roodheid en conditie, plus bespreking van persoonlijke triggers en wensen.
+                                    </p>
+                                  </div>
+
+                                  {/* Oppervlaktereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Oppervlaktereiniging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een milde, parfumvrije reinigingsmelk of milde reinigingsgel gebruiken.</li>
+                                      <li>• Zacht vuil en talg verwijderen zonder de huidbarrière te verstoren.</li>
+                                      <li>• Afnemen met lauwwarme kompressen (zonder wrijving).</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Milde dieptereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Milde dieptereiniging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Voorzichtig reinigen van de poriën met een niet-agressief product afgestemd op de overgevoelige huid.
+                                    </p>
+                                  </div>
+
+                                  {/* Milde enzymatische peeling / lysing */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Milde peeling (lysing)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een zeer milde enzymatische peeling zonder schurende korrels of agressieve zuren, en zónder hete stoom. Verwijdert dode huidcellen zonder de doorbloeding overmatig te prikkelen.
+                                    </p>
+                                  </div>
+
+                                  {/* Kalmerend serum aanbrengen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Kalmerend serum aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een geconcentreerd serum met ontstekingsremmende werkstoffen (zoals niacinamide, panthenol of hyaluronzuur) om de huid direct te koelen en roodheid te temperen.
+                                    </p>
+                                  </div>
+
+                                  {/* Kalmerend masker */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Kalmerend masker
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een kalmerend, verkoelend en intens hydraterend masker aanbrengen.</li>
+                                      <li>• Altijd bij voorkeur een parfumvrij masker om reacties te voorkomen.</li>
+                                      <li>• Brengt de huid diep tot rust en vermindert een branderig of trekkerig gevoel.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Huidherstellende verzorging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Huidherstellende verzorging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een hydraterend serum aanbrengen.</li>
+                                      <li>• Een verzorgende crème met ceramiden gebruiken om vochtverlies tegen te gaan.</li>
+                                      <li>• De natuurlijke huidbarrière intensief ondersteunen en herstellen.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Oogverzorging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Oogverzorging
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Indien nodig een milde, parfumvrije oogcrème om de tere huid rondom de ogen te beschermen en hydrateren.
+                                    </p>
+                                  </div>
+
+                                  {/* Bescherming tegen de zon */}
+                                  <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Bescherming tegen de zon (SPF)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
+                                      Afsluiten met een zachte, hoge zonbescherming (SPF 30–50). Zonlicht en UV-straling behoren tot de grootste triggers bij rosacea; goede bescherming is essentieel.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                {/* Meerdere behandelopties & Coldplasma / Skin Activ */}
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3.5 border border-[oklch(0.90_0.02_75)] space-y-1.5">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Meerdere behandelopties mogelijk:
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Er zijn meerdere behandelopties mogelijk afhankelijk van wat de huid nodig heeft. Een mogelijke inzet van <strong className="text-[oklch(0.22_0.04_50)]">Coldplasma</strong> (zeer kalmerend, antibacterieel en werkt zonder warmte) of <strong className="text-[oklch(0.22_0.04_50)]">Skin Active</strong> wordt tijdens het intakegesprek uitgebreid besproken.
                                   </p>
                                 </div>
                               </div>
