@@ -177,6 +177,7 @@ export default function Behandelingen() {
   const [coldplasmaOpen, setColdplasmaOpen] = useState(false);
   const [hydrodermabrasieOpen, setHydrodermabrasieOpen] = useState(false);
   const [hydraterendOpen, setHydraterendOpen] = useState(false);
+  const [pigmentOpen, setPigmentOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -232,7 +233,8 @@ export default function Behandelingen() {
                           (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
                           (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen) ||
                           (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen) ||
-                          (item.name.toLowerCase().includes("hydraterende") && hydraterendOpen)
+                          (item.name.toLowerCase().includes("hydraterende") && hydraterendOpen) ||
+                          (item.name === "Pigmentatie Behandeling" && pigmentOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -981,6 +983,169 @@ export default function Behandelingen() {
                                 <div className="pt-2 border-t border-[oklch(0.92_0.015_75)] flex items-start gap-1.5 text-xs font-body text-[oklch(0.50_0.04_50)]">
                                   <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
                                   <span>Advies voor de juiste huidverzorging en meer…</span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Pigmentatie Behandeling */}
+                        {item.name === "Pigmentatie Behandeling" && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setPigmentOpen(!pigmentOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={pigmentOpen}
+                            >
+                              <Sparkles size={13} className={pigmentOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{pigmentOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${pigmentOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Pigmentatie Behandeling */}
+                            {pigmentOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Egaliseren &amp; Huidvernieuwing
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Pigmentatie Behandeling (90 min)
+                                  </h4>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  Een pigmentatiebehandeling is gericht op het verminderen van pigmentvlekken, het egaliseren van de teint en het verbeteren van de huidstructuur.
+                                </p>
+
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                  <strong className="text-[oklch(0.22_0.04_50)]">Hoe ontstaat pigmentatie?</strong> Pigmentvlekken ontstaan door een ophoping van melanine (kleurpigment) in de huid. Dit kan onder andere komen door zonlicht, hormonale veranderingen, huidveroudering of ontstekingen.
+                                </div>
+
+                                {/* Behandelstappen */}
+                                <div className="space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Behandelstappen:
+                                  </p>
+
+                                  {/* Huidanalyse en intake */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Huidanalyse en intake
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Grondige analyse van de huid en bespreking van de behandelmogelijkheden en persoonlijke wensen.
+                                    </p>
+                                  </div>
+
+                                  {/* Oppervlaktereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Oppervlaktereiniging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Het gezicht reinigen met een geschikte reinigingsmelk of reinigingsgel.</li>
+                                      <li>• Make-up, talg en vuil verwijderen.</li>
+                                      <li>• De reiniger verwijderen met vochtige kompressen.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Dieptereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Dieptereiniging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een geschikt dieptereinigingsproduct aanbrengen.</li>
+                                      <li>• De huid voorzichtig reinigen.</li>
+                                      <li>• Eventueel een milde exfoliatie toepassen om dode huidcellen te verwijderen.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Peeling */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Peeling
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een geschikte pigmentatiepeeling aanbrengen (bijv. met amandelzuur, melkzuur of glycolzuur).</li>
+                                      <li>• Helpt dode huidcellen los te maken en de huidvernieuwing te ondersteunen.</li>
+                                      <li>• De inwerktijd en neutralisatie volgen volgens de productvoorschriften.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Verwijderen van onzuiverheden */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Verwijderen van onzuiverheden
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Eventuele mee-eters voorzichtig verwijderen als dat nodig is.</li>
+                                      <li>• Niet onnodig in de huid knijpen, om extra pigmentatie te voorkomen.</li>
+                                      <li>• De huid voorzichtig kalmeren.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Pigmentatie serum aanbrengen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1.5">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Pigmentatie serum aanbrengen
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een serum met pigmentremmende ingrediënten aanbrengen, bijvoorbeeld:
+                                    </p>
+                                    <ul className="space-y-1 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• <strong className="text-[oklch(0.22_0.04_50)]">Vitamine C:</strong> antioxidant en ondersteunt een egale teint.</li>
+                                      <li>• <strong className="text-[oklch(0.22_0.04_50)]">Niacinamide:</strong> helpt pigmentverschillen verminderen.</li>
+                                      <li>• <strong className="text-[oklch(0.22_0.04_50)]">Azelaïnezuur:</strong> helpt bij pigmentvlekken en een onregelmatige teint.</li>
+                                      <li>• <strong className="text-[oklch(0.22_0.04_50)]">Tranexaminezuur:</strong> wordt gebruikt bij bepaalde vormen van hyperpigmentatie.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Kalmerend of verhelderend masker */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Kalmerend of verhelderend masker
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een kalmerend of verhelderend masker aanbrengen.</li>
+                                      <li>• Ongeveer 10–20 minuten laten inwerken, afhankelijk van het product.</li>
+                                      <li>• Het masker voorzichtig verwijderen.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Huidherstellende verzorging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Huidherstellende verzorging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een hydraterend serum aanbrengen.</li>
+                                      <li>• Een verzorgende crème gebruiken.</li>
+                                      <li>• De huidbarrière ondersteunen en de huid kalmeren.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Bescherming tegen de zon */}
+                                  <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Bescherming tegen de zon (SPF)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.45_0.04_50)] leading-relaxed">
+                                      Afsluiten met een hoge zonbescherming (SPF 30–50) om de pas behandelde huid te beschermen tegen UV-straling en nieuwe pigmentvorming te voorkomen.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                {/* Meerdere behandelopties & Skin Active */}
+                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3.5 border border-[oklch(0.90_0.02_75)] space-y-1.5">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Meerdere behandelopties mogelijk:
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Er zijn meerdere behandelopties mogelijk afhankelijk van wat er is besproken bij het intakegesprek en de huidanalyse. Zo is het ook mogelijk om pigmentatie effectief te behandelen met <strong className="text-[oklch(0.22_0.04_50)]">Skin Active</strong> (zie uitleg bij <em>Skin active</em> onder Geavanceerde Technologie). We laten u tijdens het consult graag zien welke optie het beste aansluit op uw huid en wensen.
+                                  </p>
                                 </div>
                               </div>
                             )}
