@@ -1293,7 +1293,7 @@ export default function Behandelingen() {
                                     Meerdere behandelopties mogelijk:
                                   </h5>
                                   <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
-                                    Er zijn meerdere behandelopties mogelijk afhankelijk van wat de huid nodig heeft. Een mogelijke inzet van <strong className="text-[oklch(0.22_0.04_50)]">Coldplasma</strong> (zeer kalmerend, antibacterieel en werkt zonder warmte) of <strong className="text-[oklch(0.22_0.04_50)]">Skin Active</strong> wordt tijdens het intakegesprek uitgebreid besproken.
+                                    Er zijn meerdere behandelopties mogelijk afhankelijk van wat de huid nodig heeft. Een mogelijke inzet van <strong className="text-[oklch(0.22_0.04_50)]">Coldplasma</strong> of <strong className="text-[oklch(0.22_0.04_50)]">Skin Active</strong> wordt tijdens het intakegesprek uitgebreid besproken.
                                   </p>
                                 </div>
                               </div>
