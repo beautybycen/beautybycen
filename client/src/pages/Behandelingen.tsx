@@ -171,6 +171,7 @@ export default function Behandelingen() {
   const [acneOpen, setAcneOpen] = useState(false);
   const [peelOffOpen, setPeelOffOpen] = useState(false);
   const [diepeReinigingOpen, setDiepeReinigingOpen] = useState(false);
+  const [antiAgingOpen, setAntiAgingOpen] = useState(false);
   const [observOpen, setObservOpen] = useState(false);
   const [skinActiveOpen, setSkinActiveOpen] = useState(false);
   const [coldplasmaOpen, setColdplasmaOpen] = useState(false);
@@ -226,6 +227,7 @@ export default function Behandelingen() {
                           (item.name === "Acne Behandeling" && acneOpen) ||
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
                           (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
+                          (item.name.toLowerCase().includes("anti-aging") && antiAgingOpen) ||
                           (item.name.includes("Observ") && observOpen) ||
                           (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
                           (item.name.toLowerCase().includes("coldplasma") && coldplasmaOpen) ||
@@ -467,6 +469,164 @@ export default function Behandelingen() {
                                       De behandeling wordt altijd afgesloten met zonnebrand om de huid te beschermen tegen UV-straling.
                                     </p>
                                   </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Anti-Aging Behandeling */}
+                        {item.name.toLowerCase().includes("anti-aging") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setAntiAgingOpen(!antiAgingOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={antiAgingOpen}
+                            >
+                              <Sparkles size={13} className={antiAgingOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{antiAgingOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${antiAgingOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Anti-Aging Behandeling */}
+                            {antiAgingOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Huidverjonging &amp; Elasticiteit
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Anti-Aging Behandeling (90 min)
+                                  </h4>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  Een anti-aging behandeling is gericht op het verminderen van fijne lijntjes en rimpels, het verbeteren van de huidelasticiteit en het verstevigen en verjongen van de huid.
+                                </p>
+
+                                {/* Behandelstappen */}
+                                <div className="space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Behandelstappen:
+                                  </p>
+
+                                  {/* Oppervlaktereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Oppervlaktereiniging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Het gezicht reinigen met een geschikte reinigingsmelk of reinigingsgel.</li>
+                                      <li>• Make-up, talg en oppervlakkig vuil verwijderen.</li>
+                                      <li>• De reiniger verwijderen met vochtige kompressen.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Dieptereiniging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Dieptereiniging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• De huid reinigen met een dieptereinigingsproduct.</li>
+                                      <li>• Eventueel een milde peeling gebruiken om dode huidcellen te verwijderen.</li>
+                                      <li>• De huid voorbereiden op de verdere behandeling.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Stomen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Stomen
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• De huid eventueel stomen om de huid soepel te maken.</li>
+                                      <li>• Dit kan helpen bij het verwijderen van talg en onzuiverheden.</li>
+                                      <li>• Stomen is niet voor iedere huid geschikt.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Onzuiverheden verwijderen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Onzuiverheden verwijderen
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Eventuele comedonen (mee-eters) voorzichtig verwijderen.</li>
+                                      <li>• De huid daarna kalmeren en indien nodig desinfecteren.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Anti-aging serum aanbrengen */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Anti-aging serum aanbrengen
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een serum met bijvoorbeeld hyaluronzuur, peptiden of antioxidanten aanbrengen.</li>
+                                      <li>• Het serum zachtjes inmasseren.</li>
+                                      <li>• Gericht werken op fijne lijntjes, rimpels en vochtarme zones.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Anti-aging masker */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Anti-aging masker
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een verstevigend, hydraterend of voedend masker aanbrengen.</li>
+                                      <li>• Het masker ongeveer 10–20 minuten laten inwerken, afhankelijk van het product.</li>
+                                      <li>• Het masker verwijderen volgens de gebruiksaanwijzing.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Oogverzorging */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Oogverzorging
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een speciale oogcrème aanbrengen.</li>
+                                      <li>• Zachtjes inkloppen rondom de ogen.</li>
+                                      <li>• Extra aandacht besteden aan fijne lijntjes en een vochtarme huid.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Dagverzorging & SPF */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Dagverzorging &amp; SPF
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Een geschikte anti-aging crème aanbrengen om de huid extra te voeden en te hydrateren.</li>
+                                      <li>• Overdag afsluiten met SPF 30–50.</li>
+                                    </ul>
+                                  </div>
+
+                                  {/* Advies voor thuis */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Advies voor thuis
+                                    </h5>
+                                    <ul className="space-y-0.5 font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      <li>• Dagelijks SPF gebruiken.</li>
+                                      <li>• Een passend serum en verzorgingscrème adviseren.</li>
+                                      <li>• De huid goed hydrateren.</li>
+                                      <li>• Een behandeltraject adviseren wanneer dat passend is.</li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                {/* Belangrijk verschil */}
+                                <div className="bg-[oklch(0.96_0.025_50)] rounded-xl p-3.5 border border-[oklch(0.85_0.05_50)] space-y-1">
+                                  <h5 className="font-display text-xs font-700 text-[oklch(0.25_0.05_50)] uppercase tracking-wider">
+                                    Belangrijk om te weten:
+                                  </h5>
+                                  <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
+                                    Een anti-aging behandeling is niet hetzelfde als een hydraterende behandeling. Bij anti-aging ligt de nadruk meer op huidveroudering, elasticiteit, fijne lijntjes en huidstructuur.
+                                  </p>
                                 </div>
                               </div>
                             )}
