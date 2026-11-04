@@ -1019,10 +1019,6 @@ export default function Behandelingen() {
                                   Een pigmentatiebehandeling is gericht op het verminderen van pigmentvlekken, het egaliseren van de teint en het verbeteren van de huidstructuur.
                                 </p>
 
-                                <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body text-[oklch(0.35_0.04_50)] leading-relaxed">
-                                  <strong className="text-[oklch(0.22_0.04_50)]">Hoe ontstaat pigmentatie?</strong> Pigmentvlekken ontstaan door een ophoping van melanine (kleurpigment) in de huid. Dit kan onder andere komen door zonlicht, hormonale veranderingen, huidveroudering of ontstekingen.
-                                </div>
-
                                 {/* Behandelstappen */}
                                 <div className="space-y-2">
                                   <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
