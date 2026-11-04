@@ -327,7 +327,16 @@ export default function Behandelingen() {
 
                                   <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
                                     <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
-                                      5. Dagcrème aanbrengen
+                                      5. Serum aanbrengen (naar behoefte van de huid)
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een gericht serum afgestemd op wat de huid op dat moment nodig heeft (bijvoorbeeld hydratatie, kalmering of voeding).
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
+                                      6. Dagcrème aanbrengen
                                     </h5>
                                     <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
                                       Een geschikte dagcrème aanbrengen om de huid te hydrateren en te verzorgen.
@@ -336,7 +345,7 @@ export default function Behandelingen() {
 
                                   <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
                                     <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-0.5">
-                                      6. SPF aanbrengen
+                                      7. SPF aanbrengen
                                     </h5>
                                     <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
                                       De behandeling afsluiten met zonnebescherming om de huid te beschermen tegen schadelijke UV-straling.
