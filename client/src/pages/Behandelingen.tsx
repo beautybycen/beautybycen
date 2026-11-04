@@ -440,6 +440,16 @@ export default function Behandelingen() {
                                     </p>
                                   </div>
 
+                                  {/* Masker */}
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
+                                      Masker naar behoefte van de huid
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Een verzorgend masker afgestemd op de actuele conditie en behoeften van de huid (bijv. zuiverend, kalmerend of hydraterend).
+                                    </p>
+                                  </div>
+
                                   {/* Vitamine serum */}
                                   <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)]">
                                     <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)] mb-1">
