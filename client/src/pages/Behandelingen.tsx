@@ -180,6 +180,7 @@ export default function Behandelingen() {
   const [hydraterendOpen, setHydraterendOpen] = useState(false);
   const [pigmentOpen, setPigmentOpen] = useState(false);
   const [rosaceaOpen, setRosaceaOpen] = useState(false);
+  const [shooterOpen, setShooterOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
@@ -237,7 +238,8 @@ export default function Behandelingen() {
                           (item.name.toLowerCase().includes("hydrodermabrasie") && hydrodermabrasieOpen) ||
                           (item.name.toLowerCase().includes("hydraterende") && hydraterendOpen) ||
                           (item.name === "Pigmentatie Behandeling" && pigmentOpen) ||
-                          (item.name === "Rosacea Behandeling" && rosaceaOpen)
+                          (item.name === "Rosacea Behandeling" && rosaceaOpen) ||
+                          (item.name.toLowerCase().includes("shooter") && shooterOpen)
                             ? "ring-2 ring-[oklch(0.62_0.09_50)]/30"
                             : ""
                         }`}
@@ -1632,6 +1634,73 @@ export default function Behandelingen() {
                                   <p className="font-body text-xs text-[oklch(0.35_0.04_50)] leading-relaxed">
                                     Als afsluiting gebruiken we de <span className="font-700 text-[oklch(0.22_0.04_50)]">SHOOTER</span>, die met gecontroleerde luchtdruk actieve serums diep in de huid insluist voor een intens gevoede, frisse en stralende huid die perfect aansluit op uw persoonlijke huidbehoeften.
                                   </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Uitleg button for Serum aanbrengen met Shooter */}
+                        {item.name.toLowerCase().includes("shooter") && (
+                          <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
+                            <button
+                              type="button"
+                              onClick={() => setShooterOpen(!shooterOpen)}
+                              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-body text-xs font-600 tracking-wide transition-all duration-300 bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white group"
+                              aria-expanded={shooterOpen}
+                            >
+                              <Sparkles size={13} className={shooterOpen ? "text-white" : "text-[oklch(0.62_0.09_50)]"} />
+                              <span>{shooterOpen ? "Uitleg sluiten" : "Uitleg"}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-300 ${shooterOpen ? "rotate-180" : ""}`} />
+                            </button>
+
+                            {/* Fold-out explanation of Shooter */}
+                            {shooterOpen && (
+                              <div className="mt-4 pt-4 border-t border-[oklch(0.92_0.018_75)] space-y-3.5 text-left animate-in fade-in slide-in-from-top-2 duration-300">
+                                <div>
+                                  <span className="font-body text-[10px] font-700 tracking-wider uppercase text-[oklch(0.62_0.09_50)] mb-1 block">
+                                    Geavanceerde Technologie
+                                  </span>
+                                  <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
+                                    Serum aanbrengen met de Shooter
+                                  </h4>
+                                </div>
+
+                                {/* Video preview */}
+                                <div className="rounded-xl overflow-hidden border border-[oklch(0.92_0.018_75)] bg-black/5 flex justify-center">
+                                  <video
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    className="w-full max-h-[380px] object-contain rounded-xl bg-black"
+                                    src="/videos/shooter-serum.mp4"
+                                  >
+                                    Uw browser ondersteunt deze video helaas niet.
+                                  </video>
+                                </div>
+
+                                <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                  Met behulp van de innovatieve <span className="font-600 text-[oklch(0.22_0.04_50)]">SHOOTER</span> worden actieve serums met gecontroleerde luchtdruk diep en gelijkmatig in de huid ingesluisd.
+                                </p>
+
+                                <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3.5 border border-[oklch(0.92_0.018_75)] space-y-2">
+                                  <p className="font-body text-xs font-700 uppercase tracking-wider text-[oklch(0.55_0.06_45)]">
+                                    Waarom de Shooter?
+                                  </p>
+                                  <ul className="space-y-1.5 font-body text-xs text-[oklch(0.45_0.04_50)]">
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span><strong>Op maat afgestemd:</strong> het serum wordt gekozen naar de actuele behoefte van uw huid (zoals intensieve hydratatie, kalmering of versteviging).</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span><strong>Diepe opname:</strong> door micro-verneveling en luchtdruk dringen de werkstoffen dieper door in de huidlagen.</span>
+                                    </li>
+                                    <li className="flex items-start gap-1.5">
+                                      <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
+                                      <span><strong>Pijnloos en verfrissend:</strong> voelt heerlijk koel en ontspannend aan met een direct zichtbare, gezonde glow.</span>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             )}
