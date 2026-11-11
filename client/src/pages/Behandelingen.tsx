@@ -182,6 +182,16 @@ export default function Behandelingen() {
   const [rosaceaOpen, setRosaceaOpen] = useState(false);
   const [shooterOpen, setShooterOpen] = useState(false);
 
+  useEffect(() => {
+    if (window.location.hash === "#coldplasma") {
+      setColdplasmaOpen(true);
+      const timer = setTimeout(() => {
+        document.getElementById("coldplasma")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_75)]">
       <Navigation />
@@ -230,7 +240,8 @@ export default function Behandelingen() {
                     {category.items.map((item, ii) => (
                       <div
                         key={ii}
-                        className={`bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
+                        id={item.name.toLowerCase().includes("coldplasma") ? "coldplasma" : undefined}
+                        className={`scroll-mt-28 bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
                           (item.name === "Basisbehandeling" && basisOpen) ||
                           (item.name === "Jelly Masker" && jellyOpen) ||
                           (item.name === "Acne Behandeling" && acneOpen) ||

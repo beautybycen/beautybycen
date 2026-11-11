@@ -24,7 +24,18 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
 }
 
-const skinProblems = [
+type SkinProblem = {
+  title: string;
+  description: string;
+  symptoms: string[];
+  color: string;
+  link?: {
+    href: string;
+    label: string;
+  };
+};
+
+const skinProblems: SkinProblem[] = [
   {
     title: "Acne & Onzuiverheden",
     description: "Acne is een van de meest voorkomende huidproblemen. Wij bieden effectieve behandelingen die de huid reinigen, kalmeren en de huidconditie zichtbaar verbeteren.",
@@ -60,6 +71,16 @@ const skinProblems = [
     description: "De donkere huid heeft unieke behoeften. Als specialist in donkere huidtypes bieden wij veilige en effectieve behandelingen die rekening houden met de specifieke kenmerken.",
     symptoms: ["Hyperpigmentatie", "Keloïdlittekens", "Ongelijkmatige teint", "Droogheid"],
     color: "oklch(0.72_0.05_145)",
+  },
+  {
+    title: "Baard",
+    description: "Last van kale of lege plekken in de baard, ingegroeide haren of pijnlijke ontstekingen en puistjes rondom de haarzakjes? Wij behandelen dit zorgvuldig en doelgericht: vastzittende haren worden voorzichtig verwijderd, de puisten worden hygiënisch geledigd en gereinigd, waarna de ontsteking wordt nabehandeld met het Coldplasma-apparaat om bacteriën te doden en het huidherstel te stimuleren.",
+    symptoms: ["Lege plekken in de baard", "Ingegroeide haren", "Ontstekingen", "Puistjes in de baard"],
+    color: "oklch(0.78_0.06_15)",
+    link: {
+      href: "/behandelingen#coldplasma",
+      label: "Bekijk Coldplasma Behandeling",
+    },
   },
 ];
 
@@ -128,6 +149,16 @@ export default function Huidproblemen() {
                       </span>
                     ))}
                   </div>
+                  {problem.link && (
+                    <div className="mt-5 pt-4 border-t border-[oklch(0.94_0.015_75)]">
+                      <Link href={problem.link.href}>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-body text-xs font-600 tracking-wide bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white transition-all duration-300 cursor-pointer">
+                          <span>{problem.link.label}</span>
+                          <ChevronRight size={14} />
+                        </span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </FadeUp>
             ))}
