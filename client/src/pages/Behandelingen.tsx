@@ -1551,7 +1551,7 @@ export default function Behandelingen() {
                                     </li>
                                     <li className="flex items-start gap-1.5">
                                       <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
-                                      <span>Reinigt en zuivert de huid tot diep in de poriën</span>
+                                      <span>Reinigt en zuivert de huid tot diep in de poriën en helpt grove poriën zichtbaar kleiner te maken</span>
                                     </li>
                                     <li className="flex items-start gap-1.5">
                                       <span className="text-[oklch(0.62_0.09_50)] font-bold shrink-0">✓</span>
@@ -1574,7 +1574,7 @@ export default function Behandelingen() {
 
                                 <div className="space-y-2.5">
                                   <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
-                                    De behandeling is volledig pijnloos, geschikt voor elk huidtype en ideaal bij huidproblemen zoals acne, rosacea, pigmentvlekken, een doffe huid én bij ontstekingen in de baardstreek.
+                                    De behandeling is volledig pijnloos, geschikt voor elk huidtype en ideaal bij huidproblemen zoals acne, rosacea, pigmentvlekken, grove poriën, een doffe huid én bij ontstekingen in de baardstreek.
                                   </p>
                                   <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
                                     <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
@@ -1620,7 +1620,7 @@ export default function Behandelingen() {
                                 </div>
 
                                 <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
-                                  De behandeling bevat verschillende stappen en gespecialiseerde opzetstukken:
+                                  De behandeling bevat verschillende stappen en gespecialiseerde opzetstukken om de huid diep te reinigen, te hydrateren en grove poriën zichtbaar kleiner en verfijnder te maken:
                                 </p>
 
                                 {/* Opzetstukken lijst */}
@@ -1661,7 +1661,7 @@ export default function Behandelingen() {
                                     <span className="text-base shrink-0">💧</span>
                                     <div>
                                       <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">Zuigkop</h5>
-                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Reinigt de poriën diep en verwijdert dieperliggend talg.</p>
+                                      <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">Reinigt de poriën diep, verwijdert dieperliggend talg en helpt grove poriën zichtbaar te verfijnen.</p>
                                     </div>
                                   </div>
                                 </div>
