@@ -56,7 +56,7 @@ const skinProblems = [
     color: "oklch(0.62_0.09_50)",
   },
   {
-    title: "Donkere Huid Specialisatie",
+    title: "Donkere Huidspecialisatie",
     description: "De donkere huid heeft unieke behoeften. Als specialist in donkere huidtypes bieden wij veilige en effectieve behandelingen die rekening houden met de specifieke kenmerken.",
     symptoms: ["Hyperpigmentatie", "Keloïdlittekens", "Ongelijkmatige teint", "Droogheid"],
     color: "oklch(0.72_0.05_145)",
