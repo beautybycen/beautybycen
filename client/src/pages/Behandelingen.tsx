@@ -48,13 +48,13 @@ const treatments = [
     items: [
       { name: "Observ 520x Huidscan", desc: "Geavanceerde analyse van uw huid met de nieuwste scantechnologie.", duration: "30 min" },
       { name: "Hydrodermabrasie", desc: "Op basis van de huidscan die we samen hebben uitgevoerd, weten we nu precies wat uw huid op dit moment nodig heeft. We stellen daarom een gepersonaliseerde gezichtsbehandeling samen met behulp van ons geavanceerde hydrodermabrasie-apparaat.", duration: "Op maat" },
-      { name: "Skin active / microneedling zonder naalden", desc: "Stimuleert de huidvernieuwing en collageenproductie.", duration: "90 min" },
-      { name: "Coldplasma-behandeling", desc: "Deze behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
-      { name: "Serum aanbrengen met Shooter", desc: "Serum aanbrengen naar behoefte van wat de huid nodig heeft.", duration: "Op maat" },
+      { name: "Skin Active / Microneedling zonder Naalden", desc: "Stimuleert de huidvernieuwing en collageenproductie.", duration: "90 min" },
+      { name: "Coldplasma Behandeling", desc: "Deze behandeling stimuleert huidvernieuwing op cellulair niveau. De huid wordt zichtbaar verfrist, egaler van toon en straalt meer vitaliteit uit.", duration: "30 min" },
+      { name: "Serum Aanbrengen met Shooter", desc: "Serum aanbrengen naar behoefte van wat de huid nodig heeft.", duration: "Op maat" },
     ],
   },
   {
-    category: "Specialist in de donkere huid",
+    category: "Specialist in de Donkere Huid",
     items: [
       { name: "Behandeling Donkere Huid", desc: "Gespecialiseerde behandeling afgestemd op de unieke behoeften van de donkere huid.", duration: "75 min" },
       { name: "Hyperpigmentatie Behandeling", desc: "Gerichte behandeling voor het egaliseren van de huidtint.", duration: "90 min" },
@@ -1667,7 +1667,7 @@ export default function Behandelingen() {
                                     Geavanceerde Technologie
                                   </span>
                                   <h4 className="font-display text-base font-600 text-[oklch(0.22_0.04_50)] leading-snug">
-                                    Serum aanbrengen met de Shooter
+                                    Serum Aanbrengen met de Shooter
                                   </h4>
                                 </div>
 
