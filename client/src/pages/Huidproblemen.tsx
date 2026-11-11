@@ -29,10 +29,10 @@ type SkinProblem = {
   description: string;
   symptoms: string[];
   color: string;
-  link?: {
+  links?: {
     href: string;
     label: string;
-  };
+  }[];
 };
 
 const skinProblems: SkinProblem[] = [
@@ -77,16 +77,32 @@ const skinProblems: SkinProblem[] = [
     description: "Last van kale of lege plekken in de baard, ingegroeide haren of pijnlijke ontstekingen en puistjes rondom de haarzakjes? Wij behandelen dit zorgvuldig en doelgericht: vastzittende haren worden voorzichtig verwijderd, de puisten worden hygiënisch geledigd en gereinigd, waarna de ontsteking wordt nabehandeld met het Coldplasma-apparaat om bacteriën te doden en het huidherstel te stimuleren.",
     symptoms: ["Lege plekken in de baard", "Ingegroeide haren", "Ontstekingen", "Puistjes in de baard"],
     color: "oklch(0.78_0.06_15)",
-    link: {
-      href: "/behandelingen#coldplasma",
-      label: "Bekijk Coldplasma Behandeling",
-    },
+    links: [
+      {
+        href: "/behandelingen#coldplasma",
+        label: "Bekijk Coldplasma Behandeling",
+      },
+    ],
   },
   {
     title: "Grove Poriën",
-    description: "Grove of zichtbaar verwijde poriën ontstaan vaak door overtollig talg, verstoppingen of verminderde huidelasticiteit. Met dieptereiniging, peelings en technieken zoals hydrodermabrasie of Skin Active verfijnen wij de poriestructuur voor een gladdere, egalere huid.",
+    description: "Grove of zichtbaar verwijde poriën ontstaan vaak door overtollig talg, verstoppingen of verminderde huidelasticiteit. Met dieptereiniging, peelings en gerichte behandelingen zoals Coldplasma, Skin Active of Hydrodermabrasie reinigen wij de poriën intensief, stimuleren we de huidvernieuwing en maken we de poriën weer zichtbaar kleiner en verfijnder voor een gladdere, egalere huid.",
     symptoms: ["Verwijde poriën", "Verstopte poriën", "Overtollig talg", "Ongelijkmatige huidstructuur"],
     color: "oklch(0.62_0.09_50)",
+    links: [
+      {
+        href: "/behandelingen#coldplasma",
+        label: "Coldplasma",
+      },
+      {
+        href: "/behandelingen#skin-active",
+        label: "Skin Active",
+      },
+      {
+        href: "/behandelingen#hydrodermabrasie",
+        label: "Hydrodermabrasie",
+      },
+    ],
   },
 ];
 
@@ -155,14 +171,16 @@ export default function Huidproblemen() {
                       </span>
                     ))}
                   </div>
-                  {problem.link && (
-                    <div className="mt-5 pt-4 border-t border-[oklch(0.94_0.015_75)]">
-                      <Link href={problem.link.href}>
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-body text-xs font-600 tracking-wide bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white transition-all duration-300 cursor-pointer">
-                          <span>{problem.link.label}</span>
-                          <ChevronRight size={14} />
-                        </span>
-                      </Link>
+                  {problem.links && problem.links.length > 0 && (
+                    <div className="mt-5 pt-4 border-t border-[oklch(0.94_0.015_75)] flex flex-wrap gap-2">
+                      {problem.links.map((item, idx) => (
+                        <Link key={idx} href={item.href}>
+                          <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-body text-xs font-600 tracking-wide bg-[oklch(0.95_0.02_75)] text-[oklch(0.35_0.04_50)] hover:bg-[oklch(0.62_0.09_50)] hover:text-white transition-all duration-300 cursor-pointer">
+                            <span>{item.label}</span>
+                            <ChevronRight size={13} />
+                          </span>
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </div>

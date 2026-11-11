@@ -183,10 +183,17 @@ export default function Behandelingen() {
   const [shooterOpen, setShooterOpen] = useState(false);
 
   useEffect(() => {
-    if (window.location.hash === "#coldplasma") {
-      setColdplasmaOpen(true);
+    const hashActions: Record<string, () => void> = {
+      "#coldplasma": () => setColdplasmaOpen(true),
+      "#skin-active": () => setSkinActiveOpen(true),
+      "#hydrodermabrasie": () => setHydrodermabrasieOpen(true),
+    };
+    const hash = window.location.hash;
+    if (hash && hashActions[hash]) {
+      hashActions[hash]();
+      const targetId = hash.slice(1);
       const timer = setTimeout(() => {
-        document.getElementById("coldplasma")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
       return () => clearTimeout(timer);
     }
@@ -240,7 +247,15 @@ export default function Behandelingen() {
                     {category.items.map((item, ii) => (
                       <div
                         key={ii}
-                        id={item.name.toLowerCase().includes("coldplasma") ? "coldplasma" : undefined}
+                        id={
+                          item.name.toLowerCase().includes("coldplasma")
+                            ? "coldplasma"
+                            : item.name.toLowerCase().includes("skin active")
+                              ? "skin-active"
+                              : item.name.toLowerCase().includes("hydrodermabrasie")
+                                ? "hydrodermabrasie"
+                                : undefined
+                        }
                         className={`scroll-mt-28 bg-white rounded-2xl p-6 shadow-sm border border-[oklch(0.92_0.018_75)] hover:shadow-md transition-all duration-300 ${
                           (item.name === "Basisbehandeling" && basisOpen) ||
                           (item.name === "Jelly Masker" && jellyOpen) ||
