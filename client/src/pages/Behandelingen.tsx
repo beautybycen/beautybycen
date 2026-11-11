@@ -1556,10 +1556,18 @@ export default function Behandelingen() {
                                   </ul>
                                 </div>
 
-                                <div className="space-y-2">
+                                <div className="space-y-2.5">
                                   <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
-                                    De behandeling is volledig pijnloos, geschikt voor elk huidtype en ideaal bij huidproblemen zoals acne, rosacea, pigmentvlekken of een doffe huid.
+                                    De behandeling is volledig pijnloos, geschikt voor elk huidtype en ideaal bij huidproblemen zoals acne, rosacea, pigmentvlekken, een doffe huid én bij ontstekingen in de baardstreek.
                                   </p>
+                                  <div className="bg-[oklch(0.985_0.008_75)] rounded-xl p-3 border border-[oklch(0.92_0.018_75)] space-y-1">
+                                    <h5 className="font-display text-xs font-600 text-[oklch(0.22_0.04_50)]">
+                                      Baardontstekingen &amp; activeren van baardgroei
+                                    </h5>
+                                    <p className="font-body text-xs text-[oklch(0.48_0.04_50)] leading-relaxed">
+                                      Ook bij ontstekingen in de baard en kale of lege plekken biedt Coldplasma uitkomst. Na het zorgvuldig verwijderen van ingegroeide haren en het reinigen van puistjes helpt Coldplasma de ontsteking te kalmeren, bacteriën uit te schakelen en de haargroei in de baard weer te activeren.
+                                    </p>
+                                  </div>
                                   <div className="bg-[oklch(0.97_0.015_75)] rounded-xl p-3 border border-[oklch(0.90_0.02_75)] text-xs font-body font-600 text-[oklch(0.35_0.04_50)] text-center">
                                     Wilt u een frisse, egale en gezonde huid? Kies dan voor een Coldplasma-behandeling en ervaar het verschil al na één sessie.
                                   </div>
