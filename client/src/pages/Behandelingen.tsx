@@ -29,7 +29,6 @@ const treatments = [
     items: [
       { name: "Basisbehandeling", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
       { name: "Diepte Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
-      { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
       { name: "Hydraterende Behandeling", desc: "Intensieve vochtinbreng voor een droge of gedehydrateerde huid.", duration: "60 min" },
       { name: "Jelly Masker", desc: "Afgestemd op de behoeften van uw huid. Een verzorgend jellymasker afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
       { name: "Peel-off Masker", desc: "Afgestemd op de behoeften van uw huid. Een reinigend peel-off masker afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
@@ -41,6 +40,7 @@ const treatments = [
       { name: "Acne Behandeling", desc: "Gerichte behandeling voor acnegevoelige huid met kalmerende en zuiverende producten.", duration: "75 min" },
       { name: "Pigmentatie Behandeling", desc: "Behandeling voor het verminderen van donkere vlekken en ongelijkmatige teint.", duration: "90 min" },
       { name: "Rosacea Behandeling", desc: "Kalmerende behandeling voor gevoelige huid met roodheid.", duration: "60 min" },
+      { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
     ],
   },
   {
