@@ -216,7 +216,12 @@ export default function Behandelingen() {
               <FadeUp key={ci} delay={ci * 100}>
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <h2 className="font-display text-3xl font-400 text-[oklch(0.22_0.04_50)]">
+                    <h2
+                      className={`font-display text-3xl font-400 text-[oklch(0.22_0.04_50)] ${
+                        category.category === "Basisbehandelingen" ? "notranslate" : ""
+                      }`}
+                      translate={category.category === "Basisbehandelingen" ? "no" : undefined}
+                    >
                       {category.category}
                     </h2>
                     <div className="flex-1 hairline" />
