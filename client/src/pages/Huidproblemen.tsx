@@ -82,6 +82,12 @@ const skinProblems: SkinProblem[] = [
       label: "Bekijk Coldplasma Behandeling",
     },
   },
+  {
+    title: "Grove Poriën",
+    description: "Grove of zichtbaar verwijde poriën ontstaan vaak door overtollig talg, verstoppingen of verminderde huidelasticiteit. Met dieptereiniging, peelings en technieken zoals hydrodermabrasie of Skin Active verfijnen wij de poriestructuur voor een gladdere, egalere huid.",
+    symptoms: ["Verwijde poriën", "Verstopte poriën", "Overtollig talg", "Ongelijkmatige huidstructuur"],
+    color: "oklch(0.62_0.09_50)",
+  },
 ];
 
 export default function Huidproblemen() {
