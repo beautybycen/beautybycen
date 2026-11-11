@@ -28,7 +28,7 @@ const treatments = [
     category: "Basisbehandelingen",
     items: [
       { name: "Basisbehandeling", desc: "Grondige reiniging, peeling en hydratatie voor een stralende huid.", duration: "60 min" },
-      { name: "Diepe Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
+      { name: "Diepte Reiniging", desc: "Intensieve behandeling voor verstopte poriën en onzuiverheden.", duration: "75 min" },
       { name: "Anti-Aging Behandeling", desc: "Verjongende behandeling met focus op fijne lijntjes en verlies van stevigheid.", duration: "90 min" },
       { name: "Hydraterende Behandeling", desc: "Intensieve vochtinbreng voor een droge of gedehydrateerde huid.", duration: "60 min" },
       { name: "Jelly Masker", desc: "Afgestemd op de behoeften van uw huid. Een verzorgend jellymasker afgestemd op uw persoonlijke huidtype en huidconditie.", duration: "60 min" },
@@ -235,7 +235,7 @@ export default function Behandelingen() {
                           (item.name === "Jelly Masker" && jellyOpen) ||
                           (item.name === "Acne Behandeling" && acneOpen) ||
                           (item.name === "Peel-off Masker" && peelOffOpen) ||
-                          (item.name === "Diepe Reiniging" && diepeReinigingOpen) ||
+                          (item.name === "Diepte Reiniging" && diepeReinigingOpen) ||
                           (item.name.toLowerCase().includes("anti-aging") && antiAgingOpen) ||
                           (item.name.includes("Observ") && observOpen) ||
                           (item.name.toLowerCase().includes("skin active") && skinActiveOpen) ||
@@ -396,7 +396,7 @@ export default function Behandelingen() {
                         )}
 
                         {/* Uitleg button for Diepe Reiniging */}
-                        {item.name === "Diepe Reiniging" && (
+                        {item.name === "Diepte Reiniging" && (
                           <div className="mt-4 pt-3 border-t border-[oklch(0.94_0.015_75)]">
                             <button
                               type="button"
