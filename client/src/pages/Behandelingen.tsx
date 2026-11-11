@@ -1431,7 +1431,7 @@ export default function Behandelingen() {
                                     Deze innovatieve techniek maakt het mogelijk om actieve ingrediënten direct in de cellen van de huid te brengen, zónder naalden of beschadiging van de huidbarrière. Door een korte en veilige elektrische puls ontstaan tijdelijk microscopisch kleine openingen in de celwand, waardoor de huid tijdelijk extreem doordringbaar wordt.
                                   </p>
                                   <p>
-                                    Dankzij deze methode kunnen voedende stoffen de huid binnendringen precies waar ze het meeste effect hebben. Hierdoor worden huidveroudering tegengegaan, rimpels en fijne lijntjes verminderd en voelt de huid direct voller, gladder en stralender aan.
+                                    Dankzij deze methode kunnen voedende stoffen de huid binnendringen precies waar ze het meeste effect hebben. Hierdoor worden huidveroudering tegengegaan, rimpels en fijne lijntjes verminderd, grove poriën zichtbaar verfijnd en kleiner gemaakt en voelt de huid direct voller, gladder en stralender aan.
                                   </p>
                                   <p>
                                     De behandeling is volledig pijnloos, veilig en effectief. De werkstoffen worden optimaal opgenomen en zorgen voor een intensieve huidverbetering van binnenuit.
@@ -1488,6 +1488,7 @@ export default function Behandelingen() {
                                       "Striae",
                                       "Huidverslapping",
                                       "Donkere vlekken",
+                                      "Grove poriën",
                                     ].map((indicator, idx) => (
                                       <span
                                         key={idx}
