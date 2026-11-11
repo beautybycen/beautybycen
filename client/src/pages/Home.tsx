@@ -38,7 +38,7 @@ const services = [
     href: "/behandelingen",
   },
   {
-    title: "Donkere Huid Specialist",
+    title: "Donkere Huidspecialist",
     description: "Gespecialiseerde behandelingen voor donkere en gemengde huidtypes.",
     icon: Users,
     href: "/behandelingen",
